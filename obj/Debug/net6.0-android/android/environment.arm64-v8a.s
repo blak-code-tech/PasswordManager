@@ -1157,6 +1157,26 @@ app_system_properties:
 .L.env.buf.279:
 	.zero	68
 	.size	.L.env.buf.279, 68
+	.type	.L.env.buf.280, @object
+.L.env.buf.280:
+	.zero	68
+	.size	.L.env.buf.280, 68
+	.type	.L.env.buf.281, @object
+.L.env.buf.281:
+	.zero	68
+	.size	.L.env.buf.281, 68
+	.type	.L.env.buf.282, @object
+.L.env.buf.282:
+	.zero	68
+	.size	.L.env.buf.282, 68
+	.type	.L.env.buf.283, @object
+.L.env.buf.283:
+	.zero	68
+	.size	.L.env.buf.283, 68
+	.type	.L.env.buf.284, @object
+.L.env.buf.284:
+	.zero	68
+	.size	.L.env.buf.284, 68
 	// Bundled assemblies data
 
 	.type	bundled_assemblies, @object
@@ -3685,7 +3705,52 @@ bundled_assemblies:
 	.zero	4
 	.xword	.L.env.buf.279	// name
 
-	.size	bundled_assemblies, 11200
+	.word	0xffffffff	// apk_fd
+	.word	0x0	// data_offset
+	.word	0x0	// data_size
+	.zero	4
+	.xword	0x0	// data
+	.word	0x0	// name_length
+	.zero	4
+	.xword	.L.env.buf.280	// name
+
+	.word	0xffffffff	// apk_fd
+	.word	0x0	// data_offset
+	.word	0x0	// data_size
+	.zero	4
+	.xword	0x0	// data
+	.word	0x0	// name_length
+	.zero	4
+	.xword	.L.env.buf.281	// name
+
+	.word	0xffffffff	// apk_fd
+	.word	0x0	// data_offset
+	.word	0x0	// data_size
+	.zero	4
+	.xword	0x0	// data
+	.word	0x0	// name_length
+	.zero	4
+	.xword	.L.env.buf.282	// name
+
+	.word	0xffffffff	// apk_fd
+	.word	0x0	// data_offset
+	.word	0x0	// data_size
+	.zero	4
+	.xword	0x0	// data
+	.word	0x0	// name_length
+	.zero	4
+	.xword	.L.env.buf.283	// name
+
+	.word	0xffffffff	// apk_fd
+	.word	0x0	// data_offset
+	.word	0x0	// data_size
+	.zero	4
+	.xword	0x0	// data
+	.word	0x0	// name_length
+	.zero	4
+	.xword	.L.env.buf.284	// name
+
+	.size	bundled_assemblies, 11400
 	// Assembly store individual assembly data
 	.type	assembly_store_bundled_assemblies, @object
 	.global	assembly_store_bundled_assemblies
@@ -3945,7 +4010,7 @@ application_config:
 	.word	0x3	// package_naming_policy
 	.word	0xc	// environment_variable_count
 	.word	0x0	// system_property_count
-	.word	0x118	// number_of_assemblies_in_apk
+	.word	0x11d	// number_of_assemblies_in_apk
 	.word	0x44	// bundled_assembly_name_width
 	.word	0x2	// number_of_assembly_store_files
 	.word	0x24	// number_of_dso_cache_entries
@@ -3998,7 +4063,7 @@ application_config:
 
 	.type	.L.autostr.8, @object
 .L.autostr.8:
-	.asciz	"358716b2-2204-4763-906e-685ca25c5baa"
+	.asciz	"4a4cdf90-3fee-439e-80fe-1364cdda8440"
 	.size	.L.autostr.8, 37
 
 	.type	.L.autostr.9, @object

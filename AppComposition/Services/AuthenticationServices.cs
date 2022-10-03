@@ -1,6 +1,7 @@
 ﻿// main namespaces
 using Firebase.Auth;
 using Firebase.Auth.Providers;
+using Newtonsoft.Json;
 using PasswordManager.AppComposition.Statics;
 
 namespace PasswordManager.AppComposition.Services
@@ -97,17 +98,116 @@ namespace PasswordManager.AppComposition.Services
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Used to fetch the Refreshed token
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
+        public static string GetRefreshToken()
+        {
+            try
+            {
+                var userCredentials = GetUserCredentialsFromPreferences();
+
+                return userCredentials.User.Credential.RefreshToken;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// Fetches the UserCredential object from preferences
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
+        private static UserCredential GetUserCredentialsFromPreferences()
+        {
+            if (Preferences.ContainsKey("UserCredentials"))
+            {
+                var userCredential = JsonConvert.DeserializeObject<UserCredential>(Preferences.Get("UserCredentials", null));
+
+                return userCredential;
+            }
+            else
+            {
+                throw new Exception("Could not find the UserCredential slot.");
+            }
+        }
+
+        /// <summary>
+        /// Save User credentials
+        /// </summary>
+        /// <param name="userCredential"></param>
+        /// <returns></returns>
+        /// <exception cref="NullReferenceException"></exception>
         public static async Task<bool> SaveUserCredentialInformation(UserCredential userCredential)
         {
             if (userCredential == null)
             {
                 throw new NullReferenceException("The UserCredential passed is null");
             }
+
+            try
+            {
+                await AddUserDetailsToPreferencesAndSecureStorage(userCredential);
+
+                var stringifiedUserCredential = JsonConvert.SerializeObject(userCredential, Formatting.Indented);
+
+                Preferences.Set("UserCredentials", stringifiedUserCredential);
+
+                return true;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+        }
+
+        /// <summary>
+        /// Add the User credential properties to preferences and secure storage.
+        /// </summary>
+        /// <param name="userCredential"></param>
+        /// <returns>Nothing</returns>
+        private static async Task AddUserDetailsToPreferencesAndSecureStorage(UserCredential userCredential)
+        {
+            //Saving user personal info
+            Preferences.Set("email", userCredential.User.Info.Email);
+            Preferences.Set("first_name", userCredential.User.Info.FirstName);
+            Preferences.Set("last_name", userCredential.User.Info.LastName);
+            Preferences.Set("display_name", userCredential.User.Info.DisplayName);
+            Preferences.Set("photo_url", userCredential.User.Info.PhotoUrl);
+            Preferences.Set("uid", userCredential.User.Info.Uid);
+            Preferences.Set("federated_id", userCredential.User.Info.FederatedId);
+            Preferences.Set("is_email_verified", userCredential.User.Info.IsEmailVerified);
+
+            //Saving Credential info
+            Preferences.Set("provider_type", userCredential.User.Credential.ProviderType.ToString());
+            await SecureStorage.SetAsync("token", userCredential.User.Credential.IdToken);
+            await SecureStorage.SetAsync("created_date", userCredential.User.Credential.Created.ToLongDateString());
+        }
+
+        /// <summary>
+        /// Change a user's password
+        /// </summary>
+        /// <param name="password"></param>
+        /// <returns>Whether or not the password was changed successfully.</returns>
+        public static async Task<bool> ChangeUserPassword(string password)
+        {
+            try
+            {
+                var userCredential = GetUserCredentialsFromPreferences();
+                await userCredential.User.ChangePasswordAsync(password);
+
+                return true;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
             
-
-
-
-            return false;
         }
 
         /// <summary>
@@ -115,19 +215,20 @@ namespace PasswordManager.AppComposition.Services
         /// </summary>
         /// <returns>Whether or not the process was successful.</returns>
         /// <exception cref="Exception"></exception>
-
         public static async Task<bool> SignOutUser()
         {
             try
             {
                 var client = GetFirebaseClient();
+                Preferences.Clear();
+                SecureStorage.RemoveAll();
                 await client.SignOutAsync();
 
                 return true;
             }
             catch (Exception)
             {
-                throw new Exception("Something went wrong!");
+                throw;
             }
         }
     }
