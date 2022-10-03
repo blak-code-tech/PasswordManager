@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<base:BasePage
+    x:Class="PasswordManager.AppComposition.Views.MainPages.Home"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:VM="clr-namespace:PasswordManager.AppComposition.ViewModels.MainPages"
+    xmlns:base="clr-namespace:PasswordManager.AppComposition.Views.MainPages"
+    xmlns:icons="clr-namespace:PasswordManager.Resources.Fonts"
+    xmlns:sys="clr-namespace:System;assembly=netstandard"
+    AddPasswordCommand="{Binding ToNewPasswordCommand}"
+    IsMainPage="True"
+    MenuReturnCommand="{Binding ToProfileCommand}"
+    PageTitle="Passwords">
+
+    <base:BasePage.Body>
+        <RefreshView
+            BackgroundColor="{DynamicResource White}"
+            Command="{Binding Source={RelativeSource AncestorType={x:Type VM:HomeViewModel}}, Path=GetListCommand}"
+            IsRefreshing="{Binding Source={RelativeSource AncestorType={x:Type VM:HomeViewModel}}, Path=IsBusy, Mode=TwoWay}"
+            RefreshColor="{StaticResource Primary}">
+
+            <CollectionView
+                CanMixGroups="True"
+                CanReorderItems="True"
+                IsGrouped="True"
+                ItemSizingStrategy="MeasureAllItems"
+                ItemsSource="{Binding Source={RelativeSource AncestorType={x:Type VM:HomeViewModel}}, Path=Passwords}"
+                ItemsUpdatingScrollMode="KeepItemsInView">
+
+                <!--  Setting The layout of the list  -->
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout ItemSpacing="5" Orientation="Vertical" />
+                </CollectionView.ItemsLayout>
+
+                <CollectionView.GroupHeaderTemplate>
+                    <DataTemplate>
+                        <Label
+                            Padding="18,0,0,5"
+                            FontAttributes="Bold"
+                            FontFamily="BebasNeueRegular"
+                            FontSize="20"
+                            Text="{Binding Name}"
+                            TextColor="{StaticResource BasePageTitleLight}"
+                            TextTransform="Uppercase" />
+                    </DataTemplate>
+                </CollectionView.GroupHeaderTemplate>
+
+                <CollectionView.GroupFooterTemplate>
+                    <DataTemplate>
+                        <Label
+                            Padding="15,0,0,10"
+                            FontSize="Small"
+                            Text="{Binding Count, StringFormat='Total animals: {0:D}'}" />
+                    </DataTemplate>
+                </CollectionView.GroupFooterTemplate>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="15,10,10,10" ColumnDefinitions="Auto,*,0.1*">
+
+                            <Image
+                                Margin="0,0,15,0"
+                                HeightRequest="40"
+                                WidthRequest="40">
+                                <Image.Source>
+                                    <FontImageSource
+                                        FontFamily="AppIcons"
+                                        Glyph="{Binding Icon}"
+                                        Size="50"
+                                        Color="{StaticResource BasePageTitleLight}" />
+                                </Image.Source>
+                            </Image>
+
+                            <Label Grid.Column="1">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span
+                                            FontFamily="PoppinsRegular"
+                                            FontSize="20"
+                                            Text="{Binding Title}"
+                                            TextColor="{StaticResource TertiaryDark}" />
+                                        <Span Text="{x:Static sys:Environment.NewLine}" />
+                                        <Span
+                                            FontFamily="PoppinsRegular"
+                                            FontSize="16"
+                                            Text="{Binding EmailOrUsername}"
+                                            TextColor="#8018191F" />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+
+                            <!--<Image
+                                Grid.Column="2"
+                                HeightRequest="40"
+                                WidthRequest="40">
+                                <Image.Source>
+                                    <FontImageSource
+                                        FontFamily="AppIcons"
+                                        Glyph="{Static icons:FontIcons.DotsVertical}"
+                                        Size="30"
+                                        Color="{StaticResource Gray600}" />
+                                </Image.Source>
+                            </Image>-->
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+
+                <!--  Custom empty view  -->
+                <CollectionView.EmptyView>
+                    <Grid BackgroundColor="Transparent">
+                        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+
+                            <Image
+                                Aspect="AspectFit"
+                                IsVisible="False"
+                                Source="favoritebg.png"
+                                WidthRequest="150" />
+
+                            <Label
+                                HorizontalOptions="CenterAndExpand"
+                                HorizontalTextAlignment="Center"
+                                TextColor="{AppThemeBinding Light={StaticResource MainPageDark},
+                                                            Dark=Wheat}"
+                                VerticalOptions="Center">
+
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span FontSize="Large" Text="No Passwords" />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+
+                        </StackLayout>
+                    </Grid>
+
+                </CollectionView.EmptyView>
+
+                <CollectionView.Footer>
+                    <Frame
+                        BackgroundColor="Transparent"
+                        BorderColor="Transparent"
+                        HeightRequest="60" />
+                </CollectionView.Footer>
+            </CollectionView>
+
+        </RefreshView>
+    </base:BasePage.Body>
+</base:BasePage>

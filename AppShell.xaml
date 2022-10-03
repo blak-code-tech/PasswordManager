@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="PasswordManager.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:icons="clr-namespace:PasswordManager.Resources.Fonts"
+    xmlns:local="clr-namespace:PasswordManager"
+    xmlns:page="clr-namespace:PasswordManager.AppComposition.Views"
+    Shell.FlyoutBehavior="Disabled">
+
+    <ShellContent ContentTemplate="{DataTemplate page:Onboarding.OnboardingMain}" Route="onboarding" />
+
+    <ShellContent ContentTemplate="{DataTemplate page:Auth.RegistrationMain}" Route="registration" />
+
+    <ShellContent ContentTemplate="{DataTemplate page:Auth.LoginMain}" Route="login" />
+
+    <ShellContent ContentTemplate="{DataTemplate page:Auth.ResetPassword}" Route="resetpassword" />
+
+    <TabBar>
+        <Tab Title="Home" Route="home">
+            <Tab.Icon>
+                <FontImageSource
+                    FontFamily="AppIcons"
+                    Glyph="{x:Static icons:FontIcons.Home}"
+                    Size="30"
+                    Color="{StaticResource Primary}" />
+            </Tab.Icon>
+            <ShellContent ContentTemplate="{DataTemplate page:MainPages.Home}" />
+        </Tab>
+
+        <Tab Title="Analysis" Route="analysis">
+            <Tab.Icon>
+                <FontImageSource
+                    FontFamily="AppIcons"
+                    Glyph="{x:Static icons:FontIcons.ChartBar}"
+                    Size="30"
+                    Color="{StaticResource Primary}" />
+            </Tab.Icon>
+            <ShellContent ContentTemplate="{DataTemplate page:MainPages.Analysis}" />
+        </Tab>
+
+        <Tab Title="Search" Route="search">
+            <Tab.Icon>
+                <FontImageSource
+                    FontFamily="AppIcons"
+                    Glyph="{x:Static icons:FontIcons.Magnify}"
+                    Size="30"
+                    Color="{StaticResource Primary}" />
+            </Tab.Icon>
+            <ShellContent ContentTemplate="{DataTemplate page:MainPages.Search}" />
+        </Tab>
+
+        <Tab Title="Settings" Route="settings">
+            <Tab.Icon>
+                <FontImageSource
+                    FontFamily="AppIcons"
+                    Glyph="{x:Static icons:FontIcons.Cog}"
+                    Size="40"
+                    Color="{StaticResource Primary}" />
+            </Tab.Icon>
+            <ShellContent ContentTemplate="{DataTemplate page:MainPages.Settings}" />
+        </Tab>
+    </TabBar>
+
+</Shell>

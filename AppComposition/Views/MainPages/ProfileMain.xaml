@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="PasswordManager.AppComposition.Views.MainPages.ProfileMain"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:icons="clr-namespace:PasswordManager.Resources.Fonts"
+    xmlns:sys="clr-namespace:System;assembly=netstandard"
+    Shell.NavBarIsVisible="False">
+    <Grid>
+        <Grid Margin="20,20,20,0" VerticalOptions="Start">
+            <Label
+                FontAttributes="Bold"
+                FontFamily="PoppinsRegular"
+                FontSize="20"
+                HorizontalOptions="StartAndExpand"
+                Text="Profile" />
+
+            <Border
+                BackgroundColor="Transparent"
+                HeightRequest="35"
+                HorizontalOptions="End"
+                StrokeThickness="0"
+                VerticalOptions="Center"
+                WidthRequest="35">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="20,20,20,20" />
+                </Border.StrokeShape>
+                <Image Margin="5">
+                    <Image.Source>
+                        <FontImageSource
+                            FontFamily="AppIcons"
+                            Glyph="{Static icons:FontIcons.Logout}"
+                            Size="30"
+                            Color="Red" />
+                    </Image.Source>
+                </Image>
+            </Border>
+        </Grid>
+
+        <VerticalStackLayout Margin="0,-100,0,0" VerticalOptions="Center">
+            <Border
+                Margin="0,0,0,8"
+                BackgroundColor="{StaticResource Primary}"
+                HeightRequest="150"
+                HorizontalOptions="Center"
+                StrokeThickness="0"
+                VerticalOptions="Center"
+                WidthRequest="150">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="20,20,20,20" />
+                </Border.StrokeShape>
+                <Image>
+                    <Image.Source>
+                        <FontImageSource
+                            FontFamily="AppIcons"
+                            Glyph="{Static icons:FontIcons.Account}"
+                            Size="120"
+                            Color="{StaticResource White}" />
+                    </Image.Source>
+                </Image>
+            </Border>
+
+            <Label
+                FontAttributes="Bold"
+                FontFamily="BebasNeueRegular"
+                FontSize="20"
+                HorizontalOptions="Center"
+                Text="Change Picture"
+                TextColor="{AppThemeBinding Light={StaticResource Primary},
+                                            Dark={StaticResource White}}"
+                TextTransform="Uppercase" />
+        </VerticalStackLayout>
+
+        <Border
+            BackgroundColor="{StaticResource White}"
+            StrokeThickness="0"
+            VerticalOptions="End">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="40,40,0,0" />
+            </Border.StrokeShape>
+
+            <VerticalStackLayout>
+                <Grid
+                    Padding="20,20,20,15"
+                    ColumnDefinitions="*,Auto"
+                    RowDefinitions="Auto,Auto">
+                    <HorizontalStackLayout>
+                        <Label
+                            FontFamily="PoppinsRegular"
+                            FontSize="21"
+                            Text="Ohene Gyan"
+                            TextColor="{StaticResource Primary}"
+                            VerticalOptions="Center" />
+                        <CheckBox
+                            Margin="0,-3,0,0"
+                            IsChecked="True"
+                            IsEnabled="False"
+                            Style="{StaticResource ProfileCheckBox}"
+                            VerticalOptions="Center" />
+                    </HorizontalStackLayout>
+                    <Label
+                        Grid.Row="1"
+                        FontFamily="PoppinsRegular"
+                        Text="Ohenegyan@gmail.com"
+                        TextColor="{StaticResource Gray400}"
+                        VerticalOptions="Center" />
+
+                    <Border
+                        Grid.RowSpan="2"
+                        BackgroundColor="Transparent"
+                        HeightRequest="40"
+                        HorizontalOptions="End"
+                        StrokeThickness="0"
+                        WidthRequest="40">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="20,20,20,20" />
+                        </Border.StrokeShape>
+
+                        <Image Margin="5">
+                            <Image.Source>
+                                <FontImageSource
+                                    FontFamily="AppIcons"
+                                    Glyph="{Static icons:FontIcons.AccountEdit}"
+                                    Size="30"
+                                    Color="#60130F26" />
+                            </Image.Source>
+                        </Image>
+                    </Border>
+                </Grid>
+                <BoxView
+                    Margin="0,0,0,40"
+                    HeightRequest="1"
+                    Color="{StaticResource Gray100}" />
+
+                <Grid Padding="25,0,25,50" ColumnDefinitions="*,*,*">
+                    <Label
+                        FontFamily="PoppinsRegular"
+                        HorizontalOptions="Start"
+                        HorizontalTextAlignment="Center"
+                        TextColor="{StaticResource Primary}">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Strong" />
+                                <Span Text="{x:Static sys:Environment.NewLine}" />
+                                <Span Text="{x:Static sys:Environment.NewLine}" />
+                                <Span
+                                    FontAttributes="Bold"
+                                    FontSize="22"
+                                    Text="22" />
+
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+
+                    <Label
+                        Grid.Column="1"
+                        FontFamily="PoppinsRegular"
+                        HorizontalTextAlignment="Center"
+                        TextColor="{StaticResource Primary}">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Compromised" />
+                                <Span Text="{x:Static sys:Environment.NewLine}" />
+                                <Span Text="{x:Static sys:Environment.NewLine}" />
+                                <Span
+                                    FontAttributes="Bold"
+                                    FontSize="22"
+                                    Text="10" />
+
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+
+                    <Label
+                        Grid.Column="2"
+                        FontFamily="PoppinsRegular"
+                        HorizontalOptions="End"
+                        HorizontalTextAlignment="Center"
+                        TextColor="{StaticResource Primary}">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Weak" />
+                                <Span Text="{x:Static sys:Environment.NewLine}" />
+                                <Span Text="{x:Static sys:Environment.NewLine}" />
+                                <Span
+                                    FontAttributes="Bold"
+                                    FontSize="22"
+                                    Text="19" />
+
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </Grid>
+            </VerticalStackLayout>
+        </Border>
+    </Grid>
+</ContentPage>

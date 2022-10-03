@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<base:BasePage
+    x:Class="PasswordManager.AppComposition.Views.MainPages.Settings"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:VM="clr-namespace:PasswordManager.AppComposition.ViewModels.MainPages"
+    xmlns:aloha="clr-namespace:AlohaKit.Controls;assembly=AlohaKit"
+    xmlns:base="clr-namespace:PasswordManager.AppComposition.Views.MainPages"
+    xmlns:icons="clr-namespace:PasswordManager.Resources.Fonts"
+    IsMainPage="True"
+    AddPasswordCommand="{Binding ToNewPasswordCommand}"
+    MenuReturnCommand="{Binding ToProfileCommand}"
+    PageTitle="Settings">
+
+    <base:BasePage.Body>
+        <ScrollView>
+            <VerticalStackLayout Margin="0,20,0,0" Spacing="4">
+
+                <Frame
+                    Margin="0"
+                    Padding="0"
+                    BackgroundColor="Transparent"
+                    BorderColor="Transparent">
+                    <FlexLayout
+                        Margin="20,0,15,10"
+                        InputTransparent="True"
+                        JustifyContent="SpaceBetween">
+                        <Label
+                            FontSize="19"
+                            HorizontalOptions="Start"
+                            InputTransparent="True"
+                            Text="Profile"
+                            TextColor="{StaticResource Black}"
+                            VerticalOptions="Center" />
+
+                        <Image
+                            HeightRequest="40"
+                            HorizontalOptions="EndAndExpand"
+                            InputTransparent="True"
+                            WidthRequest="40">
+                            <Image.Source>
+                                <FontImageSource
+                                    FontFamily="AppIcons"
+                                    Glyph="{Static icons:FontIcons.ChevronRight}"
+                                    Size="30"
+                                    Color="{StaticResource BasePageTitleLight}" />
+                            </Image.Source>
+                        </Image>
+                    </FlexLayout>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Command="{Binding Source={RelativeSource AncestorType={x:Type VM:SettingsViewModel}}, Path=ToDetailPageCommand}"
+                            CommandParameter="profile"
+                            NumberOfTapsRequired="1" />
+                    </Frame.GestureRecognizers>
+                </Frame>
+
+
+                <Frame
+                    Margin="0"
+                    Padding="0"
+                    BackgroundColor="Transparent"
+                    BorderColor="Transparent">
+                    <FlexLayout Margin="20,0,15,10" JustifyContent="SpaceBetween">
+                        <Label
+                            FontSize="19"
+                            HorizontalOptions="Start"
+                            Text="Permissions"
+                            TextColor="{StaticResource Black}"
+                            VerticalOptions="Center" />
+
+                        <Image
+                            HeightRequest="40"
+                            HorizontalOptions="EndAndExpand"
+                            WidthRequest="40">
+                            <Image.Source>
+                                <FontImageSource
+                                    FontFamily="AppIcons"
+                                    Glyph="{Static icons:FontIcons.ChevronRight}"
+                                    Size="30"
+                                    Color="{StaticResource BasePageTitleLight}" />
+                            </Image.Source>
+                        </Image>
+                    </FlexLayout>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Command="{Binding Source={RelativeSource AncestorType={x:Type VM:SettingsViewModel}}, Path=ToDetailPageCommand}"
+                            CommandParameter="profile"
+                            NumberOfTapsRequired="1" />
+                    </Frame.GestureRecognizers>
+                </Frame>
+
+                <FlexLayout Margin="20,0,15,10" JustifyContent="SpaceBetween">
+                    <Label
+                        FontSize="19"
+                        HorizontalOptions="Start"
+                        Text="Sync"
+                        TextColor="{StaticResource Black}"
+                        VerticalOptions="Center" />
+
+                    <aloha:ToggleSwitch
+                        Margin="0,0,4,0"
+                        Background="{StaticResource PrimaryBrush}"
+                        HeightRequest="30"
+                        HorizontalOptions="EndAndExpand"
+                        IsOn="True"
+                        ThumbBrush="{StaticResource White}"
+                        WidthRequest="50" />
+                </FlexLayout>
+
+                <FlexLayout Margin="20,0,15,10" JustifyContent="SpaceBetween">
+                    <Label
+                        FontSize="19"
+                        HorizontalOptions="Start"
+                        Text="Autofill"
+                        TextColor="{StaticResource Black}"
+                        VerticalOptions="Center" />
+
+                    <aloha:ToggleSwitch
+                        Margin="0,0,4,0"
+                        Background="{StaticResource PrimaryBrush}"
+                        HeightRequest="30"
+                        HorizontalOptions="EndAndExpand"
+                        IsOn="True"
+                        ThumbBrush="{StaticResource White}"
+                        WidthRequest="50" />
+
+                </FlexLayout>
+
+                <Frame
+                    Margin="0"
+                    Padding="0"
+                    BackgroundColor="Transparent"
+                    BorderColor="Transparent">
+                    <FlexLayout Margin="20,0,15,10" JustifyContent="SpaceBetween">
+                        <Label
+                            FontSize="19"
+                            HorizontalOptions="Start"
+                            Text="About"
+                            TextColor="{StaticResource Black}"
+                            VerticalOptions="Center" />
+
+                        <Image
+                            HeightRequest="40"
+                            HorizontalOptions="EndAndExpand"
+                            WidthRequest="40">
+                            <Image.Source>
+                                <FontImageSource
+                                    FontFamily="AppIcons"
+                                    Glyph="{Static icons:FontIcons.ChevronRight}"
+                                    Size="30"
+                                    Color="{StaticResource BasePageTitleLight}" />
+                            </Image.Source>
+                        </Image>
+                    </FlexLayout>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Command="{Binding Source={RelativeSource AncestorType={x:Type VM:SettingsViewModel}}, Path=ToDetailPageCommand}"
+                            CommandParameter="profile"
+                            NumberOfTapsRequired="1" />
+                    </Frame.GestureRecognizers>
+                </Frame>
+
+                <Frame
+                    Margin="0"
+                    Padding="0"
+                    BackgroundColor="Transparent"
+                    BorderColor="Transparent">
+                    <FlexLayout Margin="20,0,15,10" JustifyContent="SpaceBetween">
+                        <Label
+                            FontSize="19"
+                            HorizontalOptions="Start"
+                            Text="Help"
+                            TextColor="{StaticResource Black}"
+                            VerticalOptions="Center" />
+
+                        <Image
+                            HeightRequest="40"
+                            HorizontalOptions="EndAndExpand"
+                            WidthRequest="40">
+                            <Image.Source>
+                                <FontImageSource
+                                    FontFamily="AppIcons"
+                                    Glyph="{Static icons:FontIcons.ChevronRight}"
+                                    Size="30"
+                                    Color="{StaticResource BasePageTitleLight}" />
+                            </Image.Source>
+                        </Image>
+                    </FlexLayout>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Command="{Binding Source={RelativeSource AncestorType={x:Type VM:SettingsViewModel}}, Path=ToDetailPageCommand}"
+                            CommandParameter="profile"
+                            NumberOfTapsRequired="1" />
+                    </Frame.GestureRecognizers>
+                </Frame>
+
+                <FlexLayout Margin="20,0,15,10" JustifyContent="SpaceBetween">
+                    <Label
+                        FontSize="19"
+                        HorizontalOptions="Start"
+                        Text="Version"
+                        TextColor="{StaticResource Black}"
+                        VerticalOptions="Center" />
+
+                    <Label
+                        FontSize="20"
+                        HeightRequest="40"
+                        HorizontalOptions="EndAndExpand"
+                        Text="1.2.2"
+                        TextColor="{StaticResource Gray400}"
+                        VerticalOptions="Center"
+                        WidthRequest="40" />
+                </FlexLayout>
+            </VerticalStackLayout>
+        </ScrollView>
+    </base:BasePage.Body>
+</base:BasePage>

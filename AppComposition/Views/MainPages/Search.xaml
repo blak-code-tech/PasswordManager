@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="PasswordManager.AppComposition.Views.MainPages.Search"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:custom="clr-namespace:PasswordManager.AppComposition.CustomControls"
+    xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    Shell.NavBarIsVisible="False">
+    <Grid RowDefinitions="Auto,*">
+
+        <custom:CustomEntry
+            Grid.Row="0"
+            Margin="15,0,15,20"
+            BorderBgColor="{AppThemeBinding Light={StaticResource Gray100},
+                                            Dark={StaticResource OffWhite}}"
+            IsSetCustomIcon="True"
+            PlaceHolderColor="{AppThemeBinding Light={StaticResource BasePageTitleLight},
+                                               Dark={StaticResource Gray200}}"
+            PlaceholderText="search here..." />
+
+        <VerticalStackLayout
+            Grid.Row="1"
+            Margin="0,-70,0,0"
+            VerticalOptions="Center">
+            <skia:SKLottieView
+                HeightRequest="200"
+                HorizontalOptions="Center"
+                RepeatCount="-1"
+                RepeatMode="Restart"
+                Source="searchAnimation1.json"
+                WidthRequest="250" />
+            <Label
+                Margin="0,-30,0,0"
+                HorizontalOptions="Center"
+                HorizontalTextAlignment="Center"
+                Text="What would you like to find? Just start typing and we will find it."
+                TextColor="{StaticResource Gray400}"
+                VerticalOptions="Center"
+                WidthRequest="240" />
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>
