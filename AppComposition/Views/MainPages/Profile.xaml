@@ -10,7 +10,7 @@
     IsMainPage="False"
     IsShowTitleRightIcon="False"
     MenuReturnCommand="{Binding ReturnCommand}"
-    PageTitle="Profile">
+    Shell.TabBarIsVisible="False">
     <base:BasePage.Body>
         <ScrollView>
             <VerticalStackLayout
@@ -20,11 +20,15 @@
 
                 <toolkit:AvatarView
                     Margin="0,0,0,30"
+                    BackgroundColor="{AppThemeBinding Light={StaticResource DarkBorder},
+                                                      Dark={StaticResource White}}"
                     CornerRadius="60"
                     FontFamily="PoppinsRegular"
                     FontSize="30"
                     HeightRequest="120"
                     Text="OG"
+                    TextColor="{AppThemeBinding Light={StaticResource White},
+                                                Dark={StaticResource DarkBorder}}"
                     WidthRequest="120" />
 
 
@@ -32,7 +36,8 @@
                     FontSize="24"
                     HorizontalOptions="Center"
                     Text="Ohene Gyan"
-                    TextColor="{StaticResource Black}" />
+                    TextColor="{AppThemeBinding Light={StaticResource Black},
+                                                Dark={StaticResource White}}" />
 
                 <Label
                     FontSize="20"
@@ -54,7 +59,8 @@
                         FontSize="20"
                         HorizontalOptions="Center"
                         Text="Edit profile"
-                        TextColor="{StaticResource Black950}"
+                        TextColor="{AppThemeBinding Light={StaticResource Black950},
+                                                    Dark={StaticResource Gray100}}"
                         VerticalOptions="Center" />
                 </Frame>
 
@@ -72,7 +78,8 @@
                             HorizontalOptions="Start"
                             InputTransparent="True"
                             Text="Security"
-                            TextColor="{StaticResource Black}"
+                            TextColor="{AppThemeBinding Light={StaticResource Black},
+                                                        Dark={StaticResource Gray100}}"
                             VerticalOptions="Center" />
 
                         <Image
@@ -85,7 +92,8 @@
                                     FontFamily="AppIcons"
                                     Glyph="{Static icons:FontIcons.ChevronRight}"
                                     Size="30"
-                                    Color="{StaticResource BasePageTitleLight}" />
+                                    Color="{AppThemeBinding Light={StaticResource BasePageTitleLight},
+                                                            Dark={StaticResource Gray300}}" />
                             </Image.Source>
                         </Image>
                     </FlexLayout>
@@ -107,7 +115,8 @@
                             FontSize="19"
                             HorizontalOptions="Start"
                             Text="Trusted devices"
-                            TextColor="{StaticResource Black}"
+                            TextColor="{AppThemeBinding Light={StaticResource Black},
+                                                        Dark={StaticResource Gray100}}"
                             VerticalOptions="Center" />
 
                         <Image
@@ -119,7 +128,8 @@
                                     FontFamily="AppIcons"
                                     Glyph="{Static icons:FontIcons.ChevronRight}"
                                     Size="30"
-                                    Color="{StaticResource BasePageTitleLight}" />
+                                    Color="{AppThemeBinding Light={StaticResource BasePageTitleLight},
+                                                            Dark={StaticResource Gray300}}" />
                             </Image.Source>
                         </Image>
                     </FlexLayout>
@@ -141,7 +151,8 @@
                             FontSize="19"
                             HorizontalOptions="Start"
                             Text="Backup"
-                            TextColor="{StaticResource Black}"
+                            TextColor="{AppThemeBinding Light={StaticResource Black},
+                                                        Dark={StaticResource Gray100}}"
                             VerticalOptions="Center" />
 
                         <Image
@@ -153,13 +164,49 @@
                                     FontFamily="AppIcons"
                                     Glyph="{Static icons:FontIcons.ChevronRight}"
                                     Size="30"
-                                    Color="{StaticResource BasePageTitleLight}" />
+                                    Color="{AppThemeBinding Light={StaticResource BasePageTitleLight},
+                                                            Dark={StaticResource Gray300}}" />
                             </Image.Source>
                         </Image>
                     </FlexLayout>
                     <Frame.GestureRecognizers>
                         <TapGestureRecognizer
                             Command="{Binding Source={RelativeSource AncestorType={x:Type VM:SettingsViewModel}}, Path=ToDetailPageCommand}"
+                            CommandParameter="profile"
+                            NumberOfTapsRequired="1" />
+                    </Frame.GestureRecognizers>
+                </Frame>
+                <Frame
+                    Margin="0"
+                    Padding="0"
+                    BackgroundColor="Transparent"
+                    BorderColor="Transparent">
+                    <FlexLayout Margin="20,0,15,10" JustifyContent="SpaceBetween">
+                        <Label
+                            FontSize="19"
+                            HorizontalOptions="Start"
+                            Text="Logout"
+                            TextColor="{AppThemeBinding Light={StaticResource Black},
+                                                        Dark={StaticResource Gray100}}"
+                            VerticalOptions="Center" />
+
+                        <Image
+                            HeightRequest="40"
+                            HorizontalOptions="EndAndExpand"
+                            WidthRequest="40">
+                            <Image.Source>
+                                <FontImageSource
+                                    FontFamily="AppIcons"
+                                    Glyph="{Static icons:FontIcons.ChevronRight}"
+                                    Size="30"
+                                    Color="{AppThemeBinding Light={StaticResource BasePageTitleLight},
+                                                            Dark={StaticResource Gray300}}" />
+                            </Image.Source>
+                        </Image>
+                    </FlexLayout>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Command="{Binding Source={RelativeSource AncestorType={x:Type VM:ProfileViewModel}}, Path=LogoutCommand}"
                             CommandParameter="profile"
                             NumberOfTapsRequired="1" />
                     </Frame.GestureRecognizers>

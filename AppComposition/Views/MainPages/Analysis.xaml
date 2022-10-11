@@ -50,7 +50,8 @@
                                         FontFamily="BebasNeueRegular"
                                         FontSize="30"
                                         Text="82%"
-                                        TextColor="Black" />
+                                        TextColor="{AppThemeBinding Light=Black,
+                                                                    Dark={StaticResource Gray100}}" />
                                 </gauge:GaugeAnnotation.Content>
                             </gauge:GaugeAnnotation>
                         </gauge:RadialAxis.Annotations>
@@ -83,7 +84,7 @@
                 Grid.Row="3"
                 Margin="0,20,0,0"
                 RowDefinitions="30,*"
-                RowSpacing="5">
+                RowSpacing="20">
                 <FlexLayout
                     Margin="15,0,20,0"
                     HeightRequest="30"
@@ -105,7 +106,8 @@
                                 FontFamily="AppIcons"
                                 Glyph="{Static icons:FontIcons.FilterVariant}"
                                 Size="30"
-                                Color="{StaticResource Gray600}" />
+                                Color="{AppThemeBinding Light={StaticResource Gray600},
+                                                        Dark={StaticResource Gray100}}" />
                         </Image.Source>
                     </Image>
                 </FlexLayout>
@@ -138,7 +140,8 @@
                                                     FontFamily="AppIcons"
                                                     Glyph="{Binding Icon}"
                                                     Size="50"
-                                                    Color="{StaticResource BasePageTitleLight}" />
+                                                    Color="{AppThemeBinding Light={StaticResource BasePageTitleLight},
+                                                                            Dark={StaticResource Gray100}}" />
                                             </Image.Source>
                                         </Image>
 
@@ -146,7 +149,8 @@
                                             Padding="5,0,0,0"
                                             FontSize="13"
                                             Text="{Binding PasswordStrength, Converter={StaticResource PasswordStrengthConverter}}"
-                                            TextColor="{StaticResource BasePageTitleLight}" />
+                                            TextColor="{AppThemeBinding Light={StaticResource BasePageTitleLight},
+                                                                        Dark={StaticResource Gray300}}" />
                                     </VerticalStackLayout>
 
 
@@ -159,13 +163,15 @@
                                                             FontFamily="PoppinsRegular"
                                                             FontSize="19"
                                                             Text="{Binding Title}"
-                                                            TextColor="{StaticResource TertiaryDark}" />
+                                                            TextColor="{AppThemeBinding Light={StaticResource TertiaryDark},
+                                                                                        Dark={StaticResource White}}" />
                                                         <Span Text="{x:Static sys:Environment.NewLine}" />
                                                         <Span
                                                             FontFamily="PoppinsRegular"
                                                             FontSize="16"
                                                             Text="{Binding EmailOrUsername}"
-                                                            TextColor="#8018191F" />
+                                                            TextColor="{AppThemeBinding Light=#8018191F,
+                                                                                        Dark={StaticResource Gray200}}" />
                                                     </FormattedString>
                                                 </Label.FormattedText>
                                             </Label>
@@ -180,7 +186,8 @@
                                                         FontFamily="AppIcons"
                                                         Glyph="{Static icons:FontIcons.ChevronRight}"
                                                         Size="30"
-                                                        Color="{StaticResource BasePageTitleLight}" />
+                                                        Color="{AppThemeBinding Light={StaticResource BasePageTitleLight},
+                                                                                Dark={StaticResource Gray100}}" />
                                                 </Image.Source>
                                             </Image>
                                         </Grid>
@@ -240,7 +247,7 @@
                             <Frame
                                 BackgroundColor="Transparent"
                                 BorderColor="Transparent"
-                                HeightRequest="60" />
+                                HeightRequest="40" />
                         </CollectionView.Footer>
                     </CollectionView>
                 </RefreshView>

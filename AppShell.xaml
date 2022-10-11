@@ -8,14 +8,6 @@
     xmlns:page="clr-namespace:PasswordManager.AppComposition.Views"
     Shell.FlyoutBehavior="Disabled">
 
-    <ShellContent ContentTemplate="{DataTemplate page:Onboarding.OnboardingMain}" Route="onboarding" />
-
-    <ShellContent ContentTemplate="{DataTemplate page:Auth.RegistrationMain}" Route="registration" />
-
-    <ShellContent ContentTemplate="{DataTemplate page:Auth.LoginMain}" Route="login" />
-
-    <ShellContent ContentTemplate="{DataTemplate page:Auth.ResetPassword}" Route="resetpassword" />
-
     <TabBar>
         <Tab Title="Home" Route="home">
             <Tab.Icon>
@@ -61,5 +53,18 @@
             <ShellContent ContentTemplate="{DataTemplate page:MainPages.Settings}" />
         </Tab>
     </TabBar>
+
+    <ShellContent
+        Title="onboarding"
+        ContentTemplate="{DataTemplate page:Onboarding.OnboardingMain}"
+        Route="onboarding" />
+
+    <ShellContent ContentTemplate="{DataTemplate page:Auth.LoginMain}" Route="login" />
+
+    <ShellContent ContentTemplate="{DataTemplate page:Auth.RegistrationMain}" Route="registration" />
+
+    <ShellContent ContentTemplate="{DataTemplate page:Auth.ResetPassword}" Route="resetpassword" />
+
+
 
 </Shell>

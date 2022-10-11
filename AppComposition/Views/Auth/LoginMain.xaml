@@ -1,104 +1,111 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage
+<base:BasePage
     x:Class="PasswordManager.AppComposition.Views.Auth.LoginMain"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:VM="clr-namespace:PasswordManager.AppComposition.ViewModels.Auth"
+    xmlns:base="clr-namespace:PasswordManager.AppComposition.Views.MainPages"
     xmlns:custom="clr-namespace:PasswordManager.AppComposition.CustomControls"
     xmlns:icons="clr-namespace:PasswordManager.Resources.Fonts"
-    Shell.NavBarIsVisible="False">
-    <ScrollView>
-        <Grid Padding="15">
-            <VerticalStackLayout Margin="0,50,0,0">
-                <Label
-                    FontAttributes="Bold"
-                    FontFamily="BebasNeueRegular"
-                    FontSize="68"
-                    HorizontalOptions="Start"
-                    HorizontalTextAlignment="Start"
-                    Text="Login"
-                    TextColor="{AppThemeBinding Light={StaticResource Secondary},
-                                                Dark={StaticResource White}}" />
-
-                <Label
-                    Margin="0,-5,0,0"
-                    FontFamily="PoppinsRegular"
-                    FontSize="Small"
-                    Text="Let's get you setup with a new account!"
-                    TextColor="{AppThemeBinding Light={StaticResource Gray600},
-                                                Dark={StaticResource White}}" />
-
-
-                <custom:CustomEntry
-                    Margin="0,30,0,0"
-                    BorderBgColor="{AppThemeBinding Light=Transparent,
-                                                    Dark={StaticResource OffWhite}}"
-                    FieldName="Email"
-                    FieldText="{Binding Email}"
-                    IsPasswordField="False"
-                    PasswordVisible="False"
-                    PlaceHolderColor="{AppThemeBinding Light={StaticResource Gray400},
-                                                       Dark={StaticResource Gray200}}"
-                    PlaceholderText="johndoe@email.com" />
-
-                <custom:CustomEntry
-                    Margin="0,10,0,0"
-                    BorderBgColor="{AppThemeBinding Light=Transparent,
-                                                    Dark={StaticResource OffWhite}}"
-                    FieldName="Password"
-                    FieldText="{Binding Password}"
-                    IsPasswordField="True"
-                    PasswordVisible="{Binding PasswordVisible}"
-                    PlaceHolderColor="{AppThemeBinding Light={StaticResource Gray400},
-                                                       Dark={StaticResource Gray200}}"
-                    PlaceholderText="Password"
-                    TogglePasswordCommand="{Binding TogglePasswordCommand}" />
-
-                <Label
-                    Margin="0,15,0,0"
-                    FontFamily="PoppinsRegular"
-                    HorizontalTextAlignment="Center"
-                    Text="Forgot Password?"
-                    TextColor="{AppThemeBinding Light={StaticResource Secondary},
-                                                Dark={StaticResource Primary}}">
-                    <Label.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding ToForgotPasswordCommand}" NumberOfTapsRequired="1" />
-                    </Label.GestureRecognizers>
-                </Label>
-
-                <Button
-                    Margin="0,25,0,0"
-                    BackgroundColor="{StaticResource Primary}"
-                    BorderColor="{StaticResource Primary}"
-                    BorderWidth="2"
-                    Command="{Binding LoginCommand}"
-                    FontAttributes="Bold"
-                    FontFamily="PoppinsRegular"
-                    FontSize="16"
-                    Text="Login"
-                    TextColor="{StaticResource White}"
-                    TextTransform="Uppercase" />
-
-                <VerticalStackLayout Margin="0,15,0,0" HorizontalOptions="Center">
+    ShowHeadSection="False">
+    <base:BasePage.Body>
+        <ScrollView>
+            <Grid Padding="15">
+                <VerticalStackLayout Margin="0,50,0,0">
                     <Label
-                        FontFamily="PoppinsRegular"
-                        HorizontalTextAlignment="Center"
-                        Text="Don't have an account yet?"
+                        FontAttributes="Bold"
+                        FontFamily="BebasNeueRegular"
+                        FontSize="68"
+                        HorizontalOptions="Start"
+                        HorizontalTextAlignment="Start"
+                        Text="Login"
                         TextColor="{AppThemeBinding Light={StaticResource Secondary},
                                                     Dark={StaticResource White}}" />
 
                     <Label
-                        FontFamily="BebasNeueRegular"
-                        FontSize="18"
+                        Margin="0,-5,0,0"
+                        FontFamily="PoppinsRegular"
+                        FontSize="Small"
+                        Text="Let's get you setup with a new account!"
+                        TextColor="{AppThemeBinding Light={StaticResource Gray600},
+                                                    Dark={StaticResource White}}" />
+
+
+                    <custom:CustomEntry
+                        Margin="0,30,0,0"
+                        BorderBgColor="{AppThemeBinding Light=Transparent,
+                                                        Dark={StaticResource OffWhite}}"
+                        FieldName="Email"
+                        FieldText="{Binding Source={RelativeSource AncestorType={x:Type VM:LoginViewModel}}, Path=Email}"
+                        IsPasswordField="False"
+                        PasswordVisible="False"
+                        PlaceHolderColor="{AppThemeBinding Light={StaticResource Gray400},
+                                                           Dark={StaticResource Gray200}}"
+                        PlaceholderText="johndoe@email.com" />
+
+                    <custom:CustomEntry
+                        Margin="0,10,0,0"
+                        BorderBgColor="{AppThemeBinding Light=Transparent,
+                                                        Dark={StaticResource OffWhite}}"
+                        FieldName="Password"
+                        FieldText="{Binding Source={RelativeSource AncestorType={x:Type VM:LoginViewModel}}, Path=Password}"
+                        IsPasswordField="True"
+                        PasswordVisible="{Binding Source={RelativeSource AncestorType={x:Type VM:LoginViewModel}}, Path=PasswordVisible}"
+                        PlaceHolderColor="{AppThemeBinding Light={StaticResource Gray400},
+                                                           Dark={StaticResource Gray200}}"
+                        PlaceholderText="Password"
+                        TogglePasswordCommand="{Binding TogglePasswordCommand}" />
+
+                    <Label
+                        Margin="0,15,0,0"
+                        FontFamily="PoppinsRegular"
                         HorizontalTextAlignment="Center"
-                        Text="REGISTER"
-                        TextColor="{StaticResource Primary}"
-                        TextTransform="Uppercase">
+                        Text="Forgot Password?"
+                        TextColor="{AppThemeBinding Light={StaticResource Secondary},
+                                                    Dark={StaticResource Gray100}}">
                         <Label.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding ToRegistrationCommand}" NumberOfTapsRequired="1" />
+                            <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type VM:LoginViewModel}}, Path=ToForgotPasswordCommand}" NumberOfTapsRequired="1" />
                         </Label.GestureRecognizers>
                     </Label>
+
+                    <Button
+                        Margin="0,25,0,0"
+                        BackgroundColor="{AppThemeBinding Light={StaticResource Primary},
+                                                          Dark={StaticResource MainPageDark}}"
+                        BorderColor="{AppThemeBinding Light={StaticResource Primary},
+                                                      Dark={StaticResource MainPageDark}}"
+                        BorderWidth="2"
+                        Command="{Binding Source={RelativeSource AncestorType={x:Type VM:LoginViewModel}}, Path=LoginCommand}"
+                        FontAttributes="Bold"
+                        FontFamily="PoppinsRegular"
+                        FontSize="16"
+                        Text="Login"
+                        TextColor="{StaticResource White}"
+                        TextTransform="Uppercase" />
+
+                    <VerticalStackLayout Margin="0,15,0,0" HorizontalOptions="Center">
+                        <Label
+                            FontFamily="PoppinsRegular"
+                            HorizontalTextAlignment="Center"
+                            Text="Don't have an account yet?"
+                            TextColor="{AppThemeBinding Light={StaticResource Secondary},
+                                                        Dark={StaticResource Gray300}}" />
+
+                        <Label
+                            FontFamily="BebasNeueRegular"
+                            FontSize="18"
+                            HorizontalTextAlignment="Center"
+                            Text="REGISTER"
+                            TextColor="{AppThemeBinding Light={StaticResource Primary},
+                                                        Dark={StaticResource White}}"
+                            TextTransform="Uppercase">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type VM:LoginViewModel}}, Path=ToRegistrationCommand}" NumberOfTapsRequired="1" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </VerticalStackLayout>
                 </VerticalStackLayout>
-            </VerticalStackLayout>
-        </Grid>
-    </ScrollView>
-</ContentPage>
+            </Grid>
+        </ScrollView>
+    </base:BasePage.Body>
+</base:BasePage>

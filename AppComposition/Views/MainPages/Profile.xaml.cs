@@ -9,4 +9,14 @@ public partial class Profile : BasePage
 		InitializeComponent();
         BindingContext = new ProfileViewModel(this);
     }
+
+    protected override async void OnAppearing()
+    {
+        base.OnAppearing();
+
+        if (!Preferences.ContainsKey("uid"))
+        {
+            await Shell.Current.GoToAsync("///onboarding");
+        }
+    }
 }

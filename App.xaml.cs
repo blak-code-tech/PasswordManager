@@ -18,7 +18,7 @@ public partial class App : Application
 	{
 		base.OnStart();
 
-		Application.Current.RequestedThemeChanged += Current_RequestedThemeChanged; ;
+		Application.Current.RequestedThemeChanged += Current_RequestedThemeChanged;
     }
 
 	private void Current_RequestedThemeChanged(object sender, AppThemeChangedEventArgs e)
@@ -30,13 +30,13 @@ public partial class App : Application
             if (currentTheme == AppTheme.Unspecified || currentTheme == AppTheme.Light)
             {
 #if __ANDROID__
-                MainActivity.SetLightTheme();
+                MainActivity.SetNavLightTheme();
 #endif
             }
             else
             {
 #if __ANDROID__
-                MainActivity.SetDarkTheme();
+                MainActivity.SetNavDarkTheme();
 #endif
             }
         });

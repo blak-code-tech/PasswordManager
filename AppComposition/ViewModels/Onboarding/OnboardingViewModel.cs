@@ -1,18 +1,12 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using PasswordManager.AppComposition.Model;
-using PasswordManager.AppComposition.Views.Auth;
 using PasswordManager.AppComposition.Views.Onboarding;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PasswordManager.AppComposition.ViewModels.Onboarding
 {
     [INotifyPropertyChanged]
-    public partial class OnboardingViewModel : BaseViewModel
+    public partial class OnboardingViewModel
     {
         private OnboardingMain _instance;
         public List<OnboardingModel> OnboardingItems { get; set; }

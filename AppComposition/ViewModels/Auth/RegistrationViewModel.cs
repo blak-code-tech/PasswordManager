@@ -1,27 +1,35 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+﻿using CommunityToolkit.Maui.Alerts;
+using CommunityToolkit.Maui.Core;
+using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using Firebase.Auth;
+using PasswordManager.AppComposition.Helpers.Statics;
+using PasswordManager.AppComposition.Helpers.Validations.Rules;
+using PasswordManager.AppComposition.Services;
 using PasswordManager.AppComposition.Views.Auth;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PasswordManager.AppComposition.ViewModels.Auth
 {
     [INotifyPropertyChanged]
-    public partial class RegistrationViewModel : BaseViewModel
+    public partial class RegistrationViewModel
     {
+        private readonly IsEmailRule<string> validator = new IsEmailRule<string>();
+
         [ObservableProperty]
-        //[NotifyCanExecuteChangedFor(nameof(GetSuggestionsCommand))]
+        bool isValidEmail;
+
+        [ObservableProperty]
+        [NotifyCanExecuteChangedFor(nameof(RegisterCommand))]
         string name;
 
         [ObservableProperty]
+        [NotifyCanExecuteChangedFor(nameof(RegisterCommand))]
         string password = "";
 
         [ObservableProperty]
+        [NotifyCanExecuteChangedFor(nameof(RegisterCommand))]
         string email;
-            
+
         [ObservableProperty]
         bool passwordVisible = true;
 
@@ -34,9 +42,27 @@ namespace PasswordManager.AppComposition.ViewModels.Auth
         [RelayCommand]
         private async Task Register()
         {
-            await instance.DisplayAlert("Testing", "Testing the registration page.", "OK");
+            if (ValidateEmail())
+            {
+                try
+                {
+                    var userCredentials = await InAppAuthenticationServices.SignUpUserWithEmailAndPassword(Email, Password, Name);
+                    await instance.DisplaySnackbar("Check email");
+                    await Shell.Current.GoToAsync("///login");
+                }
+                catch (FirebaseAuthHttpException ex)
+                {
+                    await StaticMethods<RegistrationMain>.HandleFirebaseAuthError(instance, ex.Reason, ex.Message);
+                }
+
+            }
+            else
+            {
+                await instance.DisplaySnackbar("Invalid input");
+            }
+
         }
-        
+
         [RelayCommand]
         private async Task ToLoginPage()
         {
@@ -47,6 +73,11 @@ namespace PasswordManager.AppComposition.ViewModels.Auth
         public void TogglePassword()
         {
             PasswordVisible = !PasswordVisible;
+        }
+
+        private bool ValidateEmail()
+        {
+            return validator.Check(Email);
         }
     }
 }

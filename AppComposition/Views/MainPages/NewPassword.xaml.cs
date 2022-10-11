@@ -10,4 +10,12 @@ public partial class NewPassword : BasePage
 
 		BindingContext = new NewPasswordViewModel(this);
 	}
+    protected override async void OnAppearing()
+    {
+        base.OnAppearing();
+        if (!Preferences.ContainsKey("uid"))
+        {
+            await Shell.Current.GoToAsync("///onboarding");
+        }
+    }
 }

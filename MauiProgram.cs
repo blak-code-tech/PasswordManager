@@ -1,12 +1,15 @@
 ﻿using CommunityToolkit.Maui;
 using SkiaSharp.Views.Maui.Controls.Hosting;
+using Syncfusion.Maui.Core.Converters;
 using Syncfusion.Maui.Core.Hosting;
 
 namespace PasswordManager;
 
 public static class MauiProgram
 {
-	public static MauiApp CreateMauiApp()
+		//<OutputType Condition = "'$(TargetFramework)' != 'net6.0'" > Exe </ OutputType >
+
+    public static MauiApp CreateMauiApp()
 	{
 		var builder = MauiApp.CreateBuilder();
 		builder

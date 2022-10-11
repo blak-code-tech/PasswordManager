@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage
+<base:BasePage
     x:Class="PasswordManager.AppComposition.Views.Onboarding.OnboardingMain"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:VM="clr-namespace:PasswordManager.AppComposition.ViewModels.Onboarding"
+    xmlns:base="clr-namespace:PasswordManager.AppComposition.Views.MainPages"
     xmlns:sys="clr-namespace:System;assembly=netstandard"
-    Shell.NavBarIsVisible="False">
-    <ScrollView>
-        <Grid Padding="15">
-
-            <Grid Margin="0,-100,0,0" RowSpacing="10">
-                <VerticalStackLayout Spacing="15" VerticalOptions="Center">
+    ShowHeadSection="False">
+    <base:BasePage.Body>
+        <ScrollView>
+            <Grid Padding="15" RowSpacing="10">
+                <VerticalStackLayout Spacing="15" VerticalOptions="CenterAndExpand">
                     <CarouselView
                         FlowDirection="LeftToRight"
                         IndicatorView="indicatorView"
-                        ItemsSource="{Binding OnboardingItems}"
+                        ItemsSource="{Binding Source={RelativeSource AncestorType={x:Type VM:OnboardingViewModel}}, Path=OnboardingItems}"
                         Loop="False">
 
                         <CarouselView.ItemTemplate>
@@ -67,14 +68,14 @@
                     AlignItems="End"
                     Direction="Row"
                     JustifyContent="SpaceAround"
-                    VerticalOptions="EndAndExpand"
+                    VerticalOptions="End"
                     Wrap="Wrap">
                     <Button
                         BackgroundColor="Transparent"
                         BorderColor="{AppThemeBinding Light={StaticResource Primary},
                                                       Dark={StaticResource White}}"
                         BorderWidth="2"
-                        Command="{Binding GotoRegistrationPageCommand}"
+                        Command="{Binding Source={RelativeSource AncestorType={x:Type VM:OnboardingViewModel}}, Path=GotoRegistrationPageCommand}"
                         FontAttributes="Bold"
                         Text="Register"
                         TextColor="{AppThemeBinding Light={StaticResource Primary},
@@ -85,7 +86,7 @@
                         BorderColor="{AppThemeBinding Light={StaticResource Primary},
                                                       Dark={StaticResource White}}"
                         BorderWidth="2"
-                        Command="{Binding GotoLoginPageCommand}"
+                        Command="{Binding Source={RelativeSource AncestorType={x:Type VM:OnboardingViewModel}}, Path=GotoLoginPageCommand}"
                         FontAttributes="Bold"
                         Text="Login"
                         TextColor="{AppThemeBinding Light={StaticResource White},
@@ -94,6 +95,6 @@
                         WidthRequest="150" />
                 </FlexLayout>
             </Grid>
-        </Grid>
-    </ScrollView>
-</ContentPage>
+        </ScrollView>
+    </base:BasePage.Body>
+</base:BasePage>

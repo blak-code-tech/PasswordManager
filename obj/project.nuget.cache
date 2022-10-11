@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ighRp047BBbsrtUR8IF78QeZv7eRnN9wiFP860KZTZu2T6h1m+d7sN/2uNZ87cWHOYwChRqbu3xmR9R4kgyNCA==",
+  "dgSpecHash": "sBH4yB74afzjHzExJodckvRNkX6advhbYlHi7B9fBIbLtt6iJhu3bAlmyLZbetTjIE+HLv7RwG/3IpFndPtAmQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\TT\\source\\repos\\PasswordManager\\PasswordManager.csproj",
   "expectedPackageFiles": [
@@ -12,6 +12,8 @@
     "C:\\Users\\TT\\.nuget\\packages\\firebasedatabase.net\\4.1.0\\firebasedatabase.net.4.1.0.nupkg.sha512",
     "C:\\Users\\TT\\.nuget\\packages\\googlegson\\2.9.0.1\\googlegson.2.9.0.1.nupkg.sha512",
     "C:\\Users\\TT\\.nuget\\packages\\litedb\\4.1.4\\litedb.4.1.4.nupkg.sha512",
+    "C:\\Users\\TT\\.nuget\\packages\\metrolog.maui\\2.0.1\\metrolog.maui.2.0.1.nupkg.sha512",
+    "C:\\Users\\TT\\.nuget\\packages\\metrolog.net6\\2.0.1\\metrolog.net6.2.0.1.nupkg.sha512",
     "C:\\Users\\TT\\.nuget\\packages\\microsoft.extensions.configuration\\6.0.1\\microsoft.extensions.configuration.6.0.1.nupkg.sha512",
     "C:\\Users\\TT\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\TT\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\6.0.0\\microsoft.extensions.dependencyinjection.6.0.0.nupkg.sha512",

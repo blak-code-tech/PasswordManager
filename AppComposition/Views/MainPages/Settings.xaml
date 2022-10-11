@@ -7,8 +7,8 @@
     xmlns:aloha="clr-namespace:AlohaKit.Controls;assembly=AlohaKit"
     xmlns:base="clr-namespace:PasswordManager.AppComposition.Views.MainPages"
     xmlns:icons="clr-namespace:PasswordManager.Resources.Fonts"
-    IsMainPage="True"
     AddPasswordCommand="{Binding ToNewPasswordCommand}"
+    IsMainPage="True"
     MenuReturnCommand="{Binding ToProfileCommand}"
     PageTitle="Settings">
 
@@ -30,7 +30,8 @@
                             HorizontalOptions="Start"
                             InputTransparent="True"
                             Text="Profile"
-                            TextColor="{StaticResource Black}"
+                            TextColor="{AppThemeBinding Light={StaticResource Black},
+                                                        Dark={StaticResource Gray100}}"
                             VerticalOptions="Center" />
 
                         <Image
@@ -43,7 +44,8 @@
                                     FontFamily="AppIcons"
                                     Glyph="{Static icons:FontIcons.ChevronRight}"
                                     Size="30"
-                                    Color="{StaticResource BasePageTitleLight}" />
+                                    Color="{AppThemeBinding Light={StaticResource BasePageTitleLight},
+                                                            Dark={StaticResource Gray300}}" />
                             </Image.Source>
                         </Image>
                     </FlexLayout>
@@ -66,7 +68,8 @@
                             FontSize="19"
                             HorizontalOptions="Start"
                             Text="Permissions"
-                            TextColor="{StaticResource Black}"
+                            TextColor="{AppThemeBinding Light={StaticResource Black},
+                                                        Dark={StaticResource Gray100}}"
                             VerticalOptions="Center" />
 
                         <Image
@@ -78,7 +81,8 @@
                                     FontFamily="AppIcons"
                                     Glyph="{Static icons:FontIcons.ChevronRight}"
                                     Size="30"
-                                    Color="{StaticResource BasePageTitleLight}" />
+                                    Color="{AppThemeBinding Light={StaticResource BasePageTitleLight},
+                                                            Dark={StaticResource Gray300}}" />
                             </Image.Source>
                         </Image>
                     </FlexLayout>
@@ -95,7 +99,8 @@
                         FontSize="19"
                         HorizontalOptions="Start"
                         Text="Sync"
-                        TextColor="{StaticResource Black}"
+                        TextColor="{AppThemeBinding Light={StaticResource Black},
+                                                    Dark={StaticResource Gray100}}"
                         VerticalOptions="Center" />
 
                     <aloha:ToggleSwitch
@@ -113,7 +118,8 @@
                         FontSize="19"
                         HorizontalOptions="Start"
                         Text="Autofill"
-                        TextColor="{StaticResource Black}"
+                        TextColor="{AppThemeBinding Light={StaticResource Black},
+                                                    Dark={StaticResource Gray100}}"
                         VerticalOptions="Center" />
 
                     <aloha:ToggleSwitch
@@ -137,7 +143,8 @@
                             FontSize="19"
                             HorizontalOptions="Start"
                             Text="About"
-                            TextColor="{StaticResource Black}"
+                            TextColor="{AppThemeBinding Light={StaticResource Black},
+                                                        Dark={StaticResource Gray100}}"
                             VerticalOptions="Center" />
 
                         <Image
@@ -149,7 +156,8 @@
                                     FontFamily="AppIcons"
                                     Glyph="{Static icons:FontIcons.ChevronRight}"
                                     Size="30"
-                                    Color="{StaticResource BasePageTitleLight}" />
+                                    Color="{AppThemeBinding Light={StaticResource BasePageTitleLight},
+                                                            Dark={StaticResource Gray300}}" />
                             </Image.Source>
                         </Image>
                     </FlexLayout>
@@ -171,7 +179,8 @@
                             FontSize="19"
                             HorizontalOptions="Start"
                             Text="Help"
-                            TextColor="{StaticResource Black}"
+                            TextColor="{AppThemeBinding Light={StaticResource Black},
+                                                        Dark={StaticResource Gray100}}"
                             VerticalOptions="Center" />
 
                         <Image
@@ -183,7 +192,8 @@
                                     FontFamily="AppIcons"
                                     Glyph="{Static icons:FontIcons.ChevronRight}"
                                     Size="30"
-                                    Color="{StaticResource BasePageTitleLight}" />
+                                    Color="{AppThemeBinding Light={StaticResource BasePageTitleLight},
+                                                            Dark={StaticResource Gray300}}" />
                             </Image.Source>
                         </Image>
                     </FlexLayout>
@@ -200,7 +210,8 @@
                         FontSize="19"
                         HorizontalOptions="Start"
                         Text="Version"
-                        TextColor="{StaticResource Black}"
+                        TextColor="{AppThemeBinding Light={StaticResource Black},
+                                                    Dark={StaticResource Gray100}}"
                         VerticalOptions="Center" />
 
                     <Label
@@ -208,10 +219,12 @@
                         HeightRequest="40"
                         HorizontalOptions="EndAndExpand"
                         Text="1.2.2"
-                        TextColor="{StaticResource Gray400}"
+                        TextColor="{AppThemeBinding Light={StaticResource Gray400},
+                                                    Dark={StaticResource Gray300}}"
                         VerticalOptions="Center"
                         WidthRequest="40" />
                 </FlexLayout>
+
             </VerticalStackLayout>
         </ScrollView>
     </base:BasePage.Body>

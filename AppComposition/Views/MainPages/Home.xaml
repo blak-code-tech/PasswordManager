@@ -40,7 +40,8 @@
                             FontFamily="BebasNeueRegular"
                             FontSize="20"
                             Text="{Binding Name}"
-                            TextColor="{StaticResource BasePageTitleLight}"
+                            TextColor="{AppThemeBinding Light={StaticResource BasePageTitleLight},
+                                                        Dark={StaticResource MainPage}}"
                             TextTransform="Uppercase" />
                     </DataTemplate>
                 </CollectionView.GroupHeaderTemplate>
@@ -50,7 +51,9 @@
                         <Label
                             Padding="15,0,0,10"
                             FontSize="Small"
-                            Text="{Binding Count, StringFormat='Total animals: {0:D}'}" />
+                            Text="{Binding Count, StringFormat='Total animals: {0:D}'}"
+                            TextColor="{AppThemeBinding Light={StaticResource Gray950},
+                                                        Dark={StaticResource MainPage}}" />
                     </DataTemplate>
                 </CollectionView.GroupFooterTemplate>
 
@@ -67,7 +70,8 @@
                                         FontFamily="AppIcons"
                                         Glyph="{Binding Icon}"
                                         Size="50"
-                                        Color="{StaticResource BasePageTitleLight}" />
+                                        Color="{AppThemeBinding Light={StaticResource BasePageTitleLight},
+                                                                Dark={StaticResource MainPage}}" />
                                 </Image.Source>
                             </Image>
 
@@ -78,13 +82,15 @@
                                             FontFamily="PoppinsRegular"
                                             FontSize="20"
                                             Text="{Binding Title}"
-                                            TextColor="{StaticResource TertiaryDark}" />
+                                            TextColor="{AppThemeBinding Light={StaticResource TertiaryDark},
+                                                                        Dark={StaticResource White}}" />
                                         <Span Text="{x:Static sys:Environment.NewLine}" />
                                         <Span
                                             FontFamily="PoppinsRegular"
                                             FontSize="16"
                                             Text="{Binding EmailOrUsername}"
-                                            TextColor="#8018191F" />
+                                            TextColor="{AppThemeBinding Light=#8018191F,
+                                                                        Dark={StaticResource MainPage}}" />
                                     </FormattedString>
                                 </Label.FormattedText>
                             </Label>

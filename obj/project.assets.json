@@ -128,6 +128,35 @@
           }
         }
       },
+      "MetroLog.Maui/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "MetroLog.Net6": "2.0.1"
+        },
+        "compile": {
+          "lib/net6.0/MetroLog.Maui.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/MetroLog.Maui.dll": {}
+        }
+      },
+      "MetroLog.Net6/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Logging": "6.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "6.0.1"
+        },
+        "compile": {
+          "lib/net6.0-android31.0/MetroLog.Net6.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android31.0/MetroLog.Net6.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Extensions.Configuration/6.0.1": {
         "type": "package",
         "dependencies": {
@@ -2432,6 +2461,35 @@
           }
         }
       },
+      "MetroLog.Maui/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "MetroLog.Net6": "2.0.1"
+        },
+        "compile": {
+          "lib/net6.0/MetroLog.Maui.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/MetroLog.Maui.dll": {}
+        }
+      },
+      "MetroLog.Net6/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Logging": "6.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "6.0.1"
+        },
+        "compile": {
+          "lib/net6.0-android31.0/MetroLog.Net6.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android31.0/MetroLog.Net6.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Extensions.Configuration/6.0.1": {
         "type": "package",
         "dependencies": {
@@ -4717,6 +4775,35 @@
         },
         "runtime": {
           "lib/netstandard2.0/LiteDB.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "MetroLog.Maui/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "MetroLog.Net6": "2.0.1"
+        },
+        "compile": {
+          "lib/net6.0/MetroLog.Maui.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/MetroLog.Maui.dll": {}
+        }
+      },
+      "MetroLog.Net6/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Logging": "6.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "6.0.1"
+        },
+        "compile": {
+          "lib/net6.0-android31.0/MetroLog.Net6.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android31.0/MetroLog.Net6.dll": {
             "related": ".xml"
           }
         }
@@ -7010,6 +7097,35 @@
           }
         }
       },
+      "MetroLog.Maui/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "MetroLog.Net6": "2.0.1"
+        },
+        "compile": {
+          "lib/net6.0/MetroLog.Maui.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/MetroLog.Maui.dll": {}
+        }
+      },
+      "MetroLog.Net6/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Logging": "6.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "6.0.1"
+        },
+        "compile": {
+          "lib/net6.0-android31.0/MetroLog.Net6.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android31.0/MetroLog.Net6.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Extensions.Configuration/6.0.1": {
         "type": "package",
         "dependencies": {
@@ -9295,6 +9411,35 @@
         },
         "runtime": {
           "lib/netstandard2.0/LiteDB.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "MetroLog.Maui/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "MetroLog.Net6": "2.0.1"
+        },
+        "compile": {
+          "lib/net6.0/MetroLog.Maui.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/MetroLog.Maui.dll": {}
+        }
+      },
+      "MetroLog.Net6/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Logging": "6.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "6.0.1"
+        },
+        "compile": {
+          "lib/net6.0-android31.0/MetroLog.Net6.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android31.0/MetroLog.Net6.dll": {
             "related": ".xml"
           }
         }
@@ -11588,6 +11733,35 @@
           }
         }
       },
+      "MetroLog.Maui/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "MetroLog.Net6": "2.0.1"
+        },
+        "compile": {
+          "lib/net6.0/MetroLog.Maui.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/MetroLog.Maui.dll": {}
+        }
+      },
+      "MetroLog.Net6/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Logging": "6.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "6.0.1"
+        },
+        "compile": {
+          "lib/net6.0-android31.0/MetroLog.Net6.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android31.0/MetroLog.Net6.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Extensions.Configuration/6.0.1": {
         "type": "package",
         "dependencies": {
@@ -13870,6 +14044,35 @@
         },
         "runtime": {
           "lib/netstandard2.0/LiteDB.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "MetroLog.Maui/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "MetroLog.Net6": "2.0.1"
+        },
+        "compile": {
+          "lib/net6.0/MetroLog.Maui.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/MetroLog.Maui.dll": {}
+        }
+      },
+      "MetroLog.Net6/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Logging": "6.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "6.0.1"
+        },
+        "compile": {
+          "lib/net6.0-android31.0/MetroLog.Net6.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android31.0/MetroLog.Net6.dll": {
             "related": ".xml"
           }
         }
@@ -16160,6 +16363,35 @@
           }
         }
       },
+      "MetroLog.Maui/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "MetroLog.Net6": "2.0.1"
+        },
+        "compile": {
+          "lib/net6.0/MetroLog.Maui.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/MetroLog.Maui.dll": {}
+        }
+      },
+      "MetroLog.Net6/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Logging": "6.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "6.0.1"
+        },
+        "compile": {
+          "lib/net6.0-android31.0/MetroLog.Net6.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android31.0/MetroLog.Net6.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Extensions.Configuration/6.0.1": {
         "type": "package",
         "dependencies": {
@@ -18434,6 +18666,32 @@
           }
         }
       },
+      "MetroLog.Maui/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "MetroLog.Net6": "2.0.1"
+        },
+        "compile": {
+          "lib/net6.0/MetroLog.Maui.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/MetroLog.Maui.dll": {}
+        }
+      },
+      "MetroLog.Net6/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Logging": "6.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "6.0.1",
+          "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
+        },
+        "compile": {
+          "lib/net6.0-ios15.4/MetroLog.Net6.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0-ios15.4/MetroLog.Net6.dll": {}
+        }
+      },
       "Microsoft.Extensions.Configuration/6.0.1": {
         "type": "package",
         "dependencies": {
@@ -19107,6 +19365,32 @@
           "lib/netstandard2.0/LiteDB.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "MetroLog.Maui/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "MetroLog.Net6": "2.0.1"
+        },
+        "compile": {
+          "lib/net6.0/MetroLog.Maui.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/MetroLog.Maui.dll": {}
+        }
+      },
+      "MetroLog.Net6/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Logging": "6.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "6.0.1",
+          "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
+        },
+        "compile": {
+          "lib/net6.0-ios15.4/MetroLog.Net6.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0-ios15.4/MetroLog.Net6.dll": {}
         }
       },
       "Microsoft.Extensions.Configuration/6.0.1": {
@@ -19865,6 +20149,32 @@
           }
         }
       },
+      "MetroLog.Maui/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "MetroLog.Net6": "2.0.1"
+        },
+        "compile": {
+          "lib/net6.0/MetroLog.Maui.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/MetroLog.Maui.dll": {}
+        }
+      },
+      "MetroLog.Net6/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Logging": "6.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "6.0.1",
+          "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
+        },
+        "compile": {
+          "lib/net6.0-ios15.4/MetroLog.Net6.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0-ios15.4/MetroLog.Net6.dll": {}
+        }
+      },
       "Microsoft.Extensions.Configuration/6.0.1": {
         "type": "package",
         "dependencies": {
@@ -20619,6 +20929,32 @@
           "lib/netstandard2.0/LiteDB.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "MetroLog.Maui/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "MetroLog.Net6": "2.0.1"
+        },
+        "compile": {
+          "lib/net6.0/MetroLog.Maui.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/MetroLog.Maui.dll": {}
+        }
+      },
+      "MetroLog.Net6/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Logging": "6.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "6.0.1",
+          "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
+        },
+        "compile": {
+          "lib/net6.0-ios15.4/MetroLog.Net6.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0-ios15.4/MetroLog.Net6.dll": {}
         }
       },
       "Microsoft.Extensions.Configuration/6.0.1": {
@@ -21377,6 +21713,32 @@
           }
         }
       },
+      "MetroLog.Maui/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "MetroLog.Net6": "2.0.1"
+        },
+        "compile": {
+          "lib/net6.0/MetroLog.Maui.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/MetroLog.Maui.dll": {}
+        }
+      },
+      "MetroLog.Net6/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Logging": "6.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "6.0.1",
+          "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
+        },
+        "compile": {
+          "lib/net6.0-ios15.4/MetroLog.Net6.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0-ios15.4/MetroLog.Net6.dll": {}
+        }
+      },
       "Microsoft.Extensions.Configuration/6.0.1": {
         "type": "package",
         "dependencies": {
@@ -22131,6 +22493,32 @@
           "lib/netstandard2.0/LiteDB.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "MetroLog.Maui/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "MetroLog.Net6": "2.0.1"
+        },
+        "compile": {
+          "lib/net6.0/MetroLog.Maui.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/MetroLog.Maui.dll": {}
+        }
+      },
+      "MetroLog.Net6/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Logging": "6.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "6.0.1",
+          "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
+        },
+        "compile": {
+          "lib/net6.0-ios15.4/MetroLog.Net6.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0-ios15.4/MetroLog.Net6.dll": {}
         }
       },
       "Microsoft.Extensions.Configuration/6.0.1": {
@@ -22895,6 +23283,32 @@
           }
         }
       },
+      "MetroLog.Maui/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "MetroLog.Net6": "2.0.1"
+        },
+        "compile": {
+          "lib/net6.0/MetroLog.Maui.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/MetroLog.Maui.dll": {}
+        }
+      },
+      "MetroLog.Net6/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Logging": "6.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "6.0.1",
+          "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
+        },
+        "compile": {
+          "lib/net6.0-ios15.4/MetroLog.Net6.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0-ios15.4/MetroLog.Net6.dll": {}
+        }
+      },
       "Microsoft.Extensions.Configuration/6.0.1": {
         "type": "package",
         "dependencies": {
@@ -23657,6 +24071,32 @@
           }
         }
       },
+      "MetroLog.Maui/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "MetroLog.Net6": "2.0.1"
+        },
+        "compile": {
+          "lib/net6.0/MetroLog.Maui.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/MetroLog.Maui.dll": {}
+        }
+      },
+      "MetroLog.Net6/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Logging": "6.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "6.0.1",
+          "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
+        },
+        "compile": {
+          "lib/net6.0-ios15.4/MetroLog.Net6.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0-ios15.4/MetroLog.Net6.dll": {}
+        }
+      },
       "Microsoft.Extensions.Configuration/6.0.1": {
         "type": "package",
         "dependencies": {
@@ -24397,6 +24837,32 @@
           }
         }
       },
+      "MetroLog.Maui/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "MetroLog.Net6": "2.0.1"
+        },
+        "compile": {
+          "lib/net6.0/MetroLog.Maui.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/MetroLog.Maui.dll": {}
+        }
+      },
+      "MetroLog.Net6/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Logging": "6.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "6.0.1",
+          "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
+        },
+        "compile": {
+          "lib/net6.0-maccatalyst15.4/MetroLog.Net6.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0-maccatalyst15.4/MetroLog.Net6.dll": {}
+        }
+      },
       "Microsoft.Extensions.Configuration/6.0.1": {
         "type": "package",
         "dependencies": {
@@ -25058,6 +25524,32 @@
           "lib/netstandard2.0/LiteDB.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "MetroLog.Maui/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "MetroLog.Net6": "2.0.1"
+        },
+        "compile": {
+          "lib/net6.0/MetroLog.Maui.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/MetroLog.Maui.dll": {}
+        }
+      },
+      "MetroLog.Net6/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Logging": "6.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "6.0.1",
+          "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
+        },
+        "compile": {
+          "lib/net6.0-maccatalyst15.4/MetroLog.Net6.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0-maccatalyst15.4/MetroLog.Net6.dll": {}
         }
       },
       "Microsoft.Extensions.Configuration/6.0.1": {
@@ -25816,6 +26308,32 @@
           }
         }
       },
+      "MetroLog.Maui/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "MetroLog.Net6": "2.0.1"
+        },
+        "compile": {
+          "lib/net6.0/MetroLog.Maui.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/MetroLog.Maui.dll": {}
+        }
+      },
+      "MetroLog.Net6/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Logging": "6.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "6.0.1",
+          "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
+        },
+        "compile": {
+          "lib/net6.0-maccatalyst15.4/MetroLog.Net6.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0-maccatalyst15.4/MetroLog.Net6.dll": {}
+        }
+      },
       "Microsoft.Extensions.Configuration/6.0.1": {
         "type": "package",
         "dependencies": {
@@ -26570,6 +27088,32 @@
           "lib/netstandard2.0/LiteDB.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "MetroLog.Maui/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "MetroLog.Net6": "2.0.1"
+        },
+        "compile": {
+          "lib/net6.0/MetroLog.Maui.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/MetroLog.Maui.dll": {}
+        }
+      },
+      "MetroLog.Net6/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Logging": "6.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "6.0.1",
+          "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
+        },
+        "compile": {
+          "lib/net6.0-maccatalyst15.4/MetroLog.Net6.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0-maccatalyst15.4/MetroLog.Net6.dll": {}
         }
       },
       "Microsoft.Extensions.Configuration/6.0.1": {
@@ -27328,6 +27872,32 @@
           }
         }
       },
+      "MetroLog.Maui/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "MetroLog.Net6": "2.0.1"
+        },
+        "compile": {
+          "lib/net6.0/MetroLog.Maui.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/MetroLog.Maui.dll": {}
+        }
+      },
+      "MetroLog.Net6/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Logging": "6.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "6.0.1",
+          "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
+        },
+        "compile": {
+          "lib/net6.0-maccatalyst15.4/MetroLog.Net6.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0-maccatalyst15.4/MetroLog.Net6.dll": {}
+        }
+      },
       "Microsoft.Extensions.Configuration/6.0.1": {
         "type": "package",
         "dependencies": {
@@ -28084,6 +28654,32 @@
           }
         }
       },
+      "MetroLog.Maui/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "MetroLog.Net6": "2.0.1"
+        },
+        "compile": {
+          "lib/net6.0/MetroLog.Maui.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/MetroLog.Maui.dll": {}
+        }
+      },
+      "MetroLog.Net6/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Logging": "6.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "6.0.1",
+          "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
+        },
+        "compile": {
+          "lib/net6.0-maccatalyst15.4/MetroLog.Net6.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0-maccatalyst15.4/MetroLog.Net6.dll": {}
+        }
+      },
       "Microsoft.Extensions.Configuration/6.0.1": {
         "type": "package",
         "dependencies": {
@@ -28838,6 +29434,32 @@
           "lib/netstandard2.0/LiteDB.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "MetroLog.Maui/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "MetroLog.Net6": "2.0.1"
+        },
+        "compile": {
+          "lib/net6.0/MetroLog.Maui.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/MetroLog.Maui.dll": {}
+        }
+      },
+      "MetroLog.Net6/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Logging": "6.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "6.0.1",
+          "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
+        },
+        "compile": {
+          "lib/net6.0-maccatalyst15.4/MetroLog.Net6.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0-maccatalyst15.4/MetroLog.Net6.dll": {}
         }
       },
       "Microsoft.Extensions.Configuration/6.0.1": {
@@ -29599,6 +30221,32 @@
           }
         }
       },
+      "MetroLog.Maui/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "MetroLog.Net6": "2.0.1"
+        },
+        "compile": {
+          "lib/net6.0/MetroLog.Maui.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/MetroLog.Maui.dll": {}
+        }
+      },
+      "MetroLog.Net6/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Logging": "6.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "6.0.1",
+          "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
+        },
+        "compile": {
+          "lib/net6.0-maccatalyst15.4/MetroLog.Net6.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0-maccatalyst15.4/MetroLog.Net6.dll": {}
+        }
+      },
       "Microsoft.Extensions.Configuration/6.0.1": {
         "type": "package",
         "dependencies": {
@@ -30332,6 +30980,31 @@
           "lib/netstandard2.0/LiteDB.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "MetroLog.Maui/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "MetroLog.Net6": "2.0.1"
+        },
+        "compile": {
+          "lib/net6.0/MetroLog.Maui.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/MetroLog.Maui.dll": {}
+        }
+      },
+      "MetroLog.Net6/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Logging": "6.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "6.0.1"
+        },
+        "compile": {
+          "lib/net6.0/MetroLog.Net6.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/MetroLog.Net6.dll": {}
         }
       },
       "Microsoft.Extensions.Configuration/6.0.1": {
@@ -31136,6 +31809,31 @@
           "lib/netstandard2.0/LiteDB.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "MetroLog.Maui/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "MetroLog.Net6": "2.0.1"
+        },
+        "compile": {
+          "lib/net6.0/MetroLog.Maui.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/MetroLog.Maui.dll": {}
+        }
+      },
+      "MetroLog.Net6/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Logging": "6.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "6.0.1"
+        },
+        "compile": {
+          "lib/net6.0/MetroLog.Net6.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/MetroLog.Net6.dll": {}
         }
       },
       "Microsoft.Extensions.Configuration/6.0.1": {
@@ -31993,6 +32691,31 @@
           }
         }
       },
+      "MetroLog.Maui/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "MetroLog.Net6": "2.0.1"
+        },
+        "compile": {
+          "lib/net6.0/MetroLog.Maui.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/MetroLog.Maui.dll": {}
+        }
+      },
+      "MetroLog.Net6/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Logging": "6.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "6.0.1"
+        },
+        "compile": {
+          "lib/net6.0/MetroLog.Net6.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/MetroLog.Net6.dll": {}
+        }
+      },
       "Microsoft.Extensions.Configuration/6.0.1": {
         "type": "package",
         "dependencies": {
@@ -32846,6 +33569,31 @@
           "lib/netstandard2.0/LiteDB.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "MetroLog.Maui/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "MetroLog.Net6": "2.0.1"
+        },
+        "compile": {
+          "lib/net6.0/MetroLog.Maui.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/MetroLog.Maui.dll": {}
+        }
+      },
+      "MetroLog.Net6/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Logging": "6.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "6.0.1"
+        },
+        "compile": {
+          "lib/net6.0/MetroLog.Net6.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/MetroLog.Net6.dll": {}
         }
       },
       "Microsoft.Extensions.Configuration/6.0.1": {
@@ -33703,6 +34451,31 @@
           }
         }
       },
+      "MetroLog.Maui/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "MetroLog.Net6": "2.0.1"
+        },
+        "compile": {
+          "lib/net6.0/MetroLog.Maui.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/MetroLog.Maui.dll": {}
+        }
+      },
+      "MetroLog.Net6/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Logging": "6.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "6.0.1"
+        },
+        "compile": {
+          "lib/net6.0/MetroLog.Net6.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/MetroLog.Net6.dll": {}
+        }
+      },
       "Microsoft.Extensions.Configuration/6.0.1": {
         "type": "package",
         "dependencies": {
@@ -34556,6 +35329,31 @@
           "lib/netstandard2.0/LiteDB.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "MetroLog.Maui/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "MetroLog.Net6": "2.0.1"
+        },
+        "compile": {
+          "lib/net6.0/MetroLog.Maui.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/MetroLog.Maui.dll": {}
+        }
+      },
+      "MetroLog.Net6/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Logging": "6.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "6.0.1"
+        },
+        "compile": {
+          "lib/net6.0/MetroLog.Net6.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/MetroLog.Net6.dll": {}
         }
       },
       "Microsoft.Extensions.Configuration/6.0.1": {
@@ -35413,6 +36211,31 @@
           }
         }
       },
+      "MetroLog.Maui/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "MetroLog.Net6": "2.0.1"
+        },
+        "compile": {
+          "lib/net6.0/MetroLog.Maui.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/MetroLog.Maui.dll": {}
+        }
+      },
+      "MetroLog.Net6/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Logging": "6.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "6.0.1"
+        },
+        "compile": {
+          "lib/net6.0/MetroLog.Net6.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/MetroLog.Net6.dll": {}
+        }
+      },
       "Microsoft.Extensions.Configuration/6.0.1": {
         "type": "package",
         "dependencies": {
@@ -36266,6 +37089,31 @@
           "lib/netstandard2.0/LiteDB.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "MetroLog.Maui/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "MetroLog.Net6": "2.0.1"
+        },
+        "compile": {
+          "lib/net6.0/MetroLog.Maui.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/MetroLog.Maui.dll": {}
+        }
+      },
+      "MetroLog.Net6/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Logging": "6.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "6.0.1"
+        },
+        "compile": {
+          "lib/net6.0/MetroLog.Net6.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/MetroLog.Net6.dll": {}
         }
       },
       "Microsoft.Extensions.Configuration/6.0.1": {
@@ -37169,6 +38017,34 @@
         "lib/netstandard2.0/LiteDB.xml",
         "litedb.4.1.4.nupkg.sha512",
         "litedb.nuspec"
+      ]
+    },
+    "MetroLog.Maui/2.0.1": {
+      "sha512": "jsHOs64wV/OsisPsIc0iYTCjjuAA/OlZVkWr4P1O1V5SG6QerxsWQ9B88w1cmxZb72j9koYKM5Puj4UalLJvKg==",
+      "type": "package",
+      "path": "metrolog.maui/2.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net6.0/MetroLog.Maui.dll",
+        "metrolog.maui.2.0.1.nupkg.sha512",
+        "metrolog.maui.nuspec"
+      ]
+    },
+    "MetroLog.Net6/2.0.1": {
+      "sha512": "3zkElfIlU/8D/Cl3sBsdxe09K1aBlHZiC9saxZh2oKaZjartB73zeqCzznh7qOY9s1bkhjYc3ky/roSO4lsDnw==",
+      "type": "package",
+      "path": "metrolog.net6/2.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net6.0-android31.0/MetroLog.Net6.dll",
+        "lib/net6.0-android31.0/MetroLog.Net6.xml",
+        "lib/net6.0-ios15.4/MetroLog.Net6.dll",
+        "lib/net6.0-maccatalyst15.4/MetroLog.Net6.dll",
+        "lib/net6.0/MetroLog.Net6.dll",
+        "metrolog.net6.2.0.1.nupkg.sha512",
+        "metrolog.net6.nuspec"
       ]
     },
     "Microsoft.Extensions.Configuration/6.0.1": {
@@ -41579,6 +42455,7 @@
       "CommunityToolkit.Mvvm >= 8.0.0",
       "FirebaseAuthentication.net >= 4.0.0-alpha.2",
       "FirebaseDatabase.net >= 4.1.0",
+      "MetroLog.Maui >= 2.0.1",
       "Microsoft.Maui.Dependencies >= 6.0.536",
       "Microsoft.Maui.Extensions >= 6.0.536",
       "SkiaSharp.Extended.UI.Maui >= 2.0.0-preview.61",
@@ -41591,6 +42468,7 @@
       "CommunityToolkit.Mvvm >= 8.0.0",
       "FirebaseAuthentication.net >= 4.0.0-alpha.2",
       "FirebaseDatabase.net >= 4.1.0",
+      "MetroLog.Maui >= 2.0.1",
       "Microsoft.Maui.Dependencies >= 6.0.536",
       "Microsoft.Maui.Extensions >= 6.0.536",
       "SkiaSharp.Extended.UI.Maui >= 2.0.0-preview.61",
@@ -41604,6 +42482,7 @@
       "CommunityToolkit.Mvvm >= 8.0.0",
       "FirebaseAuthentication.net >= 4.0.0-alpha.2",
       "FirebaseDatabase.net >= 4.1.0",
+      "MetroLog.Maui >= 2.0.1",
       "Microsoft.Maui.Dependencies >= 6.0.536",
       "Microsoft.Maui.Extensions >= 6.0.536",
       "SkiaSharp.Extended.UI.Maui >= 2.0.0-preview.61",
@@ -41617,6 +42496,7 @@
       "CommunityToolkit.Mvvm >= 8.0.0",
       "FirebaseAuthentication.net >= 4.0.0-alpha.2",
       "FirebaseDatabase.net >= 4.1.0",
+      "MetroLog.Maui >= 2.0.1",
       "Microsoft.Maui.Dependencies >= 6.0.536",
       "Microsoft.Maui.Extensions >= 6.0.536",
       "Microsoft.Windows.SDK.BuildTools >= 10.0.22000.194",
@@ -41706,6 +42586,10 @@
             "target": "Package",
             "version": "[4.1.0, )"
           },
+          "MetroLog.Maui": {
+            "target": "Package",
+            "version": "[2.0.1, )"
+          },
           "Microsoft.Maui.Dependencies": {
             "target": "Package",
             "version": "[6.0.536, )",
@@ -41781,6 +42665,10 @@
           "FirebaseDatabase.net": {
             "target": "Package",
             "version": "[4.1.0, )"
+          },
+          "MetroLog.Maui": {
+            "target": "Package",
+            "version": "[2.0.1, )"
           },
           "Microsoft.Maui.Dependencies": {
             "target": "Package",
@@ -41863,6 +42751,10 @@
             "target": "Package",
             "version": "[4.1.0, )"
           },
+          "MetroLog.Maui": {
+            "target": "Package",
+            "version": "[2.0.1, )"
+          },
           "Microsoft.Maui.Dependencies": {
             "target": "Package",
             "version": "[6.0.536, )",
@@ -41944,6 +42836,10 @@
           "FirebaseDatabase.net": {
             "target": "Package",
             "version": "[4.1.0, )"
+          },
+          "MetroLog.Maui": {
+            "target": "Package",
+            "version": "[2.0.1, )"
           },
           "Microsoft.Maui.Dependencies": {
             "target": "Package",
