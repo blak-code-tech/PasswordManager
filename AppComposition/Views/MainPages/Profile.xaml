@@ -5,6 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:VM="clr-namespace:PasswordManager.AppComposition.ViewModels.MainPages"
     xmlns:base="clr-namespace:PasswordManager.AppComposition.Views.MainPages"
+    xmlns:custom="clr-namespace:PasswordManager.AppComposition.Views.Templates"
     xmlns:icons="clr-namespace:PasswordManager.Resources.Fonts"
     xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
     IsMainPage="False"
@@ -35,15 +36,16 @@
                 <Label
                     FontSize="24"
                     HorizontalOptions="Center"
-                    Text="Ohene Gyan"
+                    Text="{Binding Source={RelativeSource AncestorType={x:Type VM:ProfileViewModel}}, Path=DisplayName}"
                     TextColor="{AppThemeBinding Light={StaticResource Black},
                                                 Dark={StaticResource White}}" />
 
                 <Label
                     FontSize="20"
                     HorizontalOptions="Center"
-                    Text="8758066XXX"
+                    Text="{Binding Source={RelativeSource AncestorType={x:Type VM:ProfileViewModel}}, Path=Email}"
                     TextColor="{StaticResource Gray350}" />
+                <!--  Text="8758066XXX"  -->
 
 
                 <Frame
@@ -64,153 +66,25 @@
                         VerticalOptions="Center" />
                 </Frame>
 
-                <Frame
-                    Margin="0"
-                    Padding="0"
-                    BackgroundColor="Transparent"
-                    BorderColor="Transparent">
-                    <FlexLayout
-                        Margin="20,0,15,10"
-                        InputTransparent="True"
-                        JustifyContent="SpaceBetween">
-                        <Label
-                            FontSize="19"
-                            HorizontalOptions="Start"
-                            InputTransparent="True"
-                            Text="Security"
-                            TextColor="{AppThemeBinding Light={StaticResource Black},
-                                                        Dark={StaticResource Gray100}}"
-                            VerticalOptions="Center" />
+                <custom:SettingsItem
+                    ItemCommand="{Binding Source={RelativeSource AncestorType={x:Type VM:ProfileViewModel}}, Path=ToDetailPageCommand}"
+                    ItemCommandParameter="profile"
+                    ItemText="Security" />
 
-                        <Image
-                            HeightRequest="40"
-                            HorizontalOptions="EndAndExpand"
-                            InputTransparent="True"
-                            WidthRequest="40">
-                            <Image.Source>
-                                <FontImageSource
-                                    FontFamily="AppIcons"
-                                    Glyph="{Static icons:FontIcons.ChevronRight}"
-                                    Size="30"
-                                    Color="{AppThemeBinding Light={StaticResource BasePageTitleLight},
-                                                            Dark={StaticResource Gray300}}" />
-                            </Image.Source>
-                        </Image>
-                    </FlexLayout>
-                    <Frame.GestureRecognizers>
-                        <TapGestureRecognizer
-                            Command="{Binding Source={RelativeSource AncestorType={x:Type VM:SettingsViewModel}}, Path=ToDetailPageCommand}"
-                            CommandParameter="profile"
-                            NumberOfTapsRequired="1" />
-                    </Frame.GestureRecognizers>
-                </Frame>
+                <custom:SettingsItem
+                    ItemCommand="{Binding Source={RelativeSource AncestorType={x:Type VM:ProfileViewModel}}, Path=ToDetailPageCommand}"
+                    ItemCommandParameter="profile"
+                    ItemText="Trusted devices" />
 
-                <Frame
-                    Margin="0"
-                    Padding="0"
-                    BackgroundColor="Transparent"
-                    BorderColor="Transparent">
-                    <FlexLayout Margin="20,0,15,10" JustifyContent="SpaceBetween">
-                        <Label
-                            FontSize="19"
-                            HorizontalOptions="Start"
-                            Text="Trusted devices"
-                            TextColor="{AppThemeBinding Light={StaticResource Black},
-                                                        Dark={StaticResource Gray100}}"
-                            VerticalOptions="Center" />
+                <custom:SettingsItem
+                    ItemCommand="{Binding Source={RelativeSource AncestorType={x:Type VM:ProfileViewModel}}, Path=ToDetailPageCommand}"
+                    ItemCommandParameter="profile"
+                    ItemText="Backup" />
 
-                        <Image
-                            HeightRequest="40"
-                            HorizontalOptions="EndAndExpand"
-                            WidthRequest="40">
-                            <Image.Source>
-                                <FontImageSource
-                                    FontFamily="AppIcons"
-                                    Glyph="{Static icons:FontIcons.ChevronRight}"
-                                    Size="30"
-                                    Color="{AppThemeBinding Light={StaticResource BasePageTitleLight},
-                                                            Dark={StaticResource Gray300}}" />
-                            </Image.Source>
-                        </Image>
-                    </FlexLayout>
-                    <Frame.GestureRecognizers>
-                        <TapGestureRecognizer
-                            Command="{Binding Source={RelativeSource AncestorType={x:Type VM:SettingsViewModel}}, Path=ToDetailPageCommand}"
-                            CommandParameter="profile"
-                            NumberOfTapsRequired="1" />
-                    </Frame.GestureRecognizers>
-                </Frame>
-
-                <Frame
-                    Margin="0"
-                    Padding="0"
-                    BackgroundColor="Transparent"
-                    BorderColor="Transparent">
-                    <FlexLayout Margin="20,0,15,10" JustifyContent="SpaceBetween">
-                        <Label
-                            FontSize="19"
-                            HorizontalOptions="Start"
-                            Text="Backup"
-                            TextColor="{AppThemeBinding Light={StaticResource Black},
-                                                        Dark={StaticResource Gray100}}"
-                            VerticalOptions="Center" />
-
-                        <Image
-                            HeightRequest="40"
-                            HorizontalOptions="EndAndExpand"
-                            WidthRequest="40">
-                            <Image.Source>
-                                <FontImageSource
-                                    FontFamily="AppIcons"
-                                    Glyph="{Static icons:FontIcons.ChevronRight}"
-                                    Size="30"
-                                    Color="{AppThemeBinding Light={StaticResource BasePageTitleLight},
-                                                            Dark={StaticResource Gray300}}" />
-                            </Image.Source>
-                        </Image>
-                    </FlexLayout>
-                    <Frame.GestureRecognizers>
-                        <TapGestureRecognizer
-                            Command="{Binding Source={RelativeSource AncestorType={x:Type VM:SettingsViewModel}}, Path=ToDetailPageCommand}"
-                            CommandParameter="profile"
-                            NumberOfTapsRequired="1" />
-                    </Frame.GestureRecognizers>
-                </Frame>
-                <Frame
-                    Margin="0"
-                    Padding="0"
-                    BackgroundColor="Transparent"
-                    BorderColor="Transparent">
-                    <FlexLayout Margin="20,0,15,10" JustifyContent="SpaceBetween">
-                        <Label
-                            FontSize="19"
-                            HorizontalOptions="Start"
-                            Text="Logout"
-                            TextColor="{AppThemeBinding Light={StaticResource Black},
-                                                        Dark={StaticResource Gray100}}"
-                            VerticalOptions="Center" />
-
-                        <Image
-                            HeightRequest="40"
-                            HorizontalOptions="EndAndExpand"
-                            WidthRequest="40">
-                            <Image.Source>
-                                <FontImageSource
-                                    FontFamily="AppIcons"
-                                    Glyph="{Static icons:FontIcons.ChevronRight}"
-                                    Size="30"
-                                    Color="{AppThemeBinding Light={StaticResource BasePageTitleLight},
-                                                            Dark={StaticResource Gray300}}" />
-                            </Image.Source>
-                        </Image>
-                    </FlexLayout>
-                    <Frame.GestureRecognizers>
-                        <TapGestureRecognizer
-                            Command="{Binding Source={RelativeSource AncestorType={x:Type VM:ProfileViewModel}}, Path=LogoutCommand}"
-                            CommandParameter="profile"
-                            NumberOfTapsRequired="1" />
-                    </Frame.GestureRecognizers>
-                </Frame>
+                <custom:SettingsItem
+                    ItemCommand="{Binding Source={RelativeSource AncestorType={x:Type VM:ProfileViewModel}}, Path=LogoutCommand}"
+                    ItemCommandParameter="profile"
+                    ItemText="Logout" />
             </VerticalStackLayout>
         </ScrollView>
     </base:BasePage.Body>

@@ -17,7 +17,7 @@ namespace PasswordManager.AppComposition.Services.Notification
         /// <param name="page">The page's instance</param>
         /// <param name="action">The action button text</param>
         /// <param name="message">The message to be displayed</param>
-        /// <param name="fabButtonName">The name of an action button to animated.</param>
+        /// <param name="actionButtonText">The name of an action button.</param>
         /// <returns></returns>
         public static async Task ShowSnackBarAsync(T page, string message, Action action = null,string actionButtonText = "OK")
         {
@@ -36,7 +36,7 @@ namespace PasswordManager.AppComposition.Services.Notification
             }
             catch (Exception ex)
             {
-
+                Console.WriteLine(ex.Message);
             }
 
         }

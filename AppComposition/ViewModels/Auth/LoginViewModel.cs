@@ -31,6 +31,12 @@ namespace PasswordManager.AppComposition.ViewModels.Auth
 
         [ObservableProperty]
         bool passwordVisible = true;
+        
+        [ObservableProperty]
+        private bool isLoading = false;
+
+        [ObservableProperty]
+        private string progressMessage;
 
         private LoginMain instance;
         public LoginViewModel(LoginMain _instance)
@@ -43,39 +49,49 @@ namespace PasswordManager.AppComposition.ViewModels.Auth
         {
             if(!string.IsNullOrWhiteSpace(Email) && !string.IsNullOrWhiteSpace(Password))
             {
+                IsLoading = true;
                 if (ValidateEmail())
                 {
                     try
                     {
+                        ProgressMessage = "Signing you in...";
                         var userCred = await InAppAuthenticationServices.SignInUserWithEmailAndPassword(Email, Password);
 
                         if (userCred != null)
                         {
+                            ProgressMessage = "Finishing up...";
                             var res = await InAppAuthenticationServices.SaveUserCredentialInformation(userCred);
 
                             if (res)
                             {
+                                Email = String.Empty;
+                                Password = String.Empty;
                                 await Shell.Current.GoToAsync("///home");
+                                IsLoading = false;
                             }
                             else
                             {
                                 await InAppAuthenticationServices.SignOutUser();
+                                IsLoading = false;
                                 await InAppNotification<LoginMain>.ShowSnackBarAsync(instance, "Something went wrong. Check your internet connectivity.");
                             }
                         }
                     }
                     catch (FirebaseAuthHttpException ex)
                     {
+                        IsLoading = false;
                         await StaticMethods<LoginMain>.HandleFirebaseAuthError(instance, ex.Reason, ex.Message);
                     }     
                 }
                 else
                 {
+                    IsLoading = false;
                     await InAppNotification<LoginMain>.ShowSnackBarAsync(instance, "You have entered an incorrect email.");
                 }
             }
             else
             {
+                IsLoading = false;
                 await InAppNotification<LoginMain>.ShowSnackBarAsync(instance, "Make sure to enter your email and password.");
             }
         }
@@ -83,6 +99,8 @@ namespace PasswordManager.AppComposition.ViewModels.Auth
         [RelayCommand]
         public async Task ToRegistration()
         {
+            Email = String.Empty;
+            Password = String.Empty;
             await Shell.Current.GoToAsync("///registration");
         }
         

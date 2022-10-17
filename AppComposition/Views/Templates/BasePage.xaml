@@ -4,8 +4,10 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:icons="clr-namespace:PasswordManager.Resources.Fonts"
+    xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
     xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
     x:Name="this"
+    BindingContext="{Reference this}"
     Shell.NavBarIsVisible="False">
 
     <ContentPage.Resources>
@@ -24,79 +26,111 @@
         <toolkit:StatusBarBehavior StatusBarColor="{AppThemeBinding Light={StaticResource MainPage}, Dark={StaticResource MainPageDark}}" StatusBarStyle="{AppThemeBinding Light=DarkContent, Dark=LightContent}" />
     </ContentPage.Behaviors>
 
-    <Grid BindingContext="{Reference this}" RowDefinitions="Auto,*">
-        <!--#region Title Section-->
-        <FlexLayout
-            Grid.Row="0"
-            Margin="0,0,0,10"
-            Padding="10,15"
-            AlignItems="Center"
-            BackgroundColor="{AppThemeBinding Light=Transparent,
-                                              Dark={StaticResource MainPageDark}}"
+    <Grid RowDefinitions="*,*">
+
+        <Grid Grid.RowSpan="2" RowDefinitions="Auto,*">
+            <!--#region Title Section-->
+            <FlexLayout
+                Grid.Row="0"
+                Margin="0,0,0,10"
+                Padding="10,15"
+                AlignItems="Center"
+                BackgroundColor="{AppThemeBinding Light=Transparent,
+                                                  Dark={StaticResource MainPageDark}}"
+                BindingContext="{Reference this}"
+                HeightRequest="50"
+                IsVisible="{Binding ShowHeadSection}"
+                JustifyContent="SpaceBetween">
+
+                <Image
+                    Margin="7,0"
+                    Aspect="AspectFit"
+                    HeightRequest="35"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"
+                    WidthRequest="35">
+
+                    <Image.Source>
+                        <FontImageSource
+                            FontFamily="AppIcons"
+                            Glyph="{Binding IsMainPage, Converter={StaticResource MenuIconConverter}}"
+                            Size="50"
+                            Color="{AppThemeBinding Light={StaticResource BasePageTitleLight},
+                                                    Dark={StaticResource MainPage}}" />
+                    </Image.Source>
+
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Command="{Binding MenuReturnCommand}"
+                            CommandParameter="{Binding MenuReturnCommandParameter}"
+                            NumberOfTapsRequired="1" />
+                    </Image.GestureRecognizers>
+                </Image>
+
+                <Label Style="{StaticResource PageTitleStyle}" Text="{Binding PageTitle}" />
+
+                <Image
+                    Margin="7,0"
+                    Aspect="AspectFit"
+                    HeightRequest="35"
+                    HorizontalOptions="End"
+                    IsVisible="{Binding IsShowTitleRightIcon}"
+                    VerticalOptions="Center"
+                    WidthRequest="35">
+
+                    <Image.Source>
+                        <FontImageSource
+                            FontFamily="AppIcons"
+                            Glyph="{Static icons:FontIcons.Plus}"
+                            Size="50"
+                            Color="{AppThemeBinding Light={StaticResource BasePageTitleLight},
+                                                    Dark={StaticResource MainPage}}" />
+                    </Image.Source>
+
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Command="{Binding AddPasswordCommand}"
+                            CommandParameter="{Binding AddPasswordCommandParameter}"
+                            NumberOfTapsRequired="1" />
+                    </Image.GestureRecognizers>
+                </Image>
+            </FlexLayout>
+            <!--#endregion-->
+
+            <ContentView
+                x:Name="BodyContent"
+                Grid.Row="1"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand" />
+        </Grid>
+
+        <Grid
+            Grid.RowSpan="2"
+            BackgroundColor="{AppThemeBinding Light={StaticResource MainPage},
+                                              Dark={StaticResource DarkBorder}}"
             BindingContext="{Reference this}"
-            HeightRequest="50"
-            IsVisible="{Binding ShowHeadSection}"
-            JustifyContent="SpaceBetween">
+            IsVisible="{Binding ShowProgress, Mode=TwoWay}">
 
-            <Image
-                Margin="7,0"
-                Aspect="AspectFit"
-                HeightRequest="35"
-                HorizontalOptions="Start"
-                VerticalOptions="Center"
-                WidthRequest="35">
-
-                <Image.Source>
-                    <FontImageSource
-                        FontFamily="AppIcons"
-                        Glyph="{Binding IsMainPage, Converter={StaticResource MenuIconConverter}}"
-                        Size="50"
-                        Color="{AppThemeBinding Light={StaticResource BasePageTitleLight},
-                                                Dark={StaticResource MainPage}}" />
-                </Image.Source>
-
-                <Image.GestureRecognizers>
-                    <TapGestureRecognizer
-                        Command="{Binding MenuReturnCommand}"
-                        CommandParameter="{Binding MenuReturnCommandParameter}"
-                        NumberOfTapsRequired="1" />
-                </Image.GestureRecognizers>
-            </Image>
-
-            <Label Style="{StaticResource PageTitleStyle}" Text="{Binding PageTitle}" />
-
-            <Image
-                Margin="7,0"
-                Aspect="AspectFit"
-                HeightRequest="35"
-                HorizontalOptions="End"
-                IsVisible="{Binding IsShowTitleRightIcon}"
-                VerticalOptions="Center"
-                WidthRequest="35">
-
-                <Image.Source>
-                    <FontImageSource
-                        FontFamily="AppIcons"
-                        Glyph="{Static icons:FontIcons.Plus}"
-                        Size="50"
-                        Color="{AppThemeBinding Light={StaticResource BasePageTitleLight},
-                                                Dark={StaticResource MainPage}}" />
-                </Image.Source>
-
-                <Image.GestureRecognizers>
-                    <TapGestureRecognizer
-                        Command="{Binding AddPasswordCommand}"
-                        CommandParameter="{Binding AddPasswordCommandParameter}"
-                        NumberOfTapsRequired="1" />
-                </Image.GestureRecognizers>
-            </Image>
-        </FlexLayout>
-        <!--#endregion-->
-
-        <ContentView
-            x:Name="BodyContent"
-            Grid.Row="1"
-            HorizontalOptions="FillAndExpand"
-            VerticalOptions="FillAndExpand" />
+            <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                <skia:SKLottieView
+                    HeightRequest="250"
+                    HorizontalOptions="Center"
+                    IsAnimationEnabled="{Binding ShowProgress}"
+                    RepeatCount="-1"
+                    RepeatMode="Restart"
+                    Source="loading.json"
+                    WidthRequest="250" />
+                <Label
+                    Margin="0,-70,0,0"
+                    FontSize="Medium"
+                    HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    Text="{Binding ProgressMessage}"
+                    TextColor="{StaticResource Gray400}"
+                    VerticalOptions="Center"
+                    WidthRequest="240" />
+            </VerticalStackLayout>
+        </Grid>
     </Grid>
+
 </ContentPage>

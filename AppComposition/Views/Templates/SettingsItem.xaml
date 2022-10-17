@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView
+    x:Class="PasswordManager.AppComposition.Views.Templates.SettingsItem"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:icons="clr-namespace:PasswordManager.Resources.Fonts"
+    x:Name="this">
+    <Frame
+        Margin="0"
+        Padding="0"
+        BackgroundColor="Transparent"
+        BindingContext="{Reference this}"
+        BorderColor="Transparent">
+        <FlexLayout
+            Margin="20,0,15,10"
+            InputTransparent="True"
+            JustifyContent="SpaceBetween">
+            <Label
+                FontSize="19"
+                HorizontalOptions="Start"
+                InputTransparent="True"
+                Text="{Binding ItemText}"
+                TextColor="{AppThemeBinding Light={StaticResource Black},
+                                            Dark={StaticResource Gray100}}"
+                VerticalOptions="Center" />
+
+            <Image
+                HeightRequest="40"
+                HorizontalOptions="EndAndExpand"
+                InputTransparent="True"
+                WidthRequest="40">
+                <Image.Source>
+                    <FontImageSource
+                        FontFamily="AppIcons"
+                        Glyph="{Static icons:FontIcons.ChevronRight}"
+                        Size="30"
+                        Color="{AppThemeBinding Light={StaticResource BasePageTitleLight},
+                                                Dark={StaticResource Gray300}}" />
+                </Image.Source>
+            </Image>
+        </FlexLayout>
+        <Frame.GestureRecognizers>
+            <TapGestureRecognizer
+                Command="{Binding ItemCommand}"
+                CommandParameter="{Binding ItemCommandParameter}"
+                NumberOfTapsRequired="1" />
+        </Frame.GestureRecognizers>
+    </Frame>
+</ContentView>

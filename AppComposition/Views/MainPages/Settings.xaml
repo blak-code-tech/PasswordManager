@@ -6,6 +6,7 @@
     xmlns:VM="clr-namespace:PasswordManager.AppComposition.ViewModels.MainPages"
     xmlns:aloha="clr-namespace:AlohaKit.Controls;assembly=AlohaKit"
     xmlns:base="clr-namespace:PasswordManager.AppComposition.Views.MainPages"
+    xmlns:custom="clr-namespace:PasswordManager.AppComposition.Views.Templates"
     xmlns:icons="clr-namespace:PasswordManager.Resources.Fonts"
     AddPasswordCommand="{Binding ToNewPasswordCommand}"
     IsMainPage="True"
@@ -16,83 +17,15 @@
         <ScrollView>
             <VerticalStackLayout Margin="0,20,0,0" Spacing="4">
 
-                <Frame
-                    Margin="0"
-                    Padding="0"
-                    BackgroundColor="Transparent"
-                    BorderColor="Transparent">
-                    <FlexLayout
-                        Margin="20,0,15,10"
-                        InputTransparent="True"
-                        JustifyContent="SpaceBetween">
-                        <Label
-                            FontSize="19"
-                            HorizontalOptions="Start"
-                            InputTransparent="True"
-                            Text="Profile"
-                            TextColor="{AppThemeBinding Light={StaticResource Black},
-                                                        Dark={StaticResource Gray100}}"
-                            VerticalOptions="Center" />
+                <custom:SettingsItem
+                    ItemCommand="{Binding Source={RelativeSource AncestorType={x:Type VM:SettingsViewModel}}, Path=ToDetailPageCommand}"
+                    ItemCommandParameter="profile"
+                    ItemText="Profile" />
 
-                        <Image
-                            HeightRequest="40"
-                            HorizontalOptions="EndAndExpand"
-                            InputTransparent="True"
-                            WidthRequest="40">
-                            <Image.Source>
-                                <FontImageSource
-                                    FontFamily="AppIcons"
-                                    Glyph="{Static icons:FontIcons.ChevronRight}"
-                                    Size="30"
-                                    Color="{AppThemeBinding Light={StaticResource BasePageTitleLight},
-                                                            Dark={StaticResource Gray300}}" />
-                            </Image.Source>
-                        </Image>
-                    </FlexLayout>
-                    <Frame.GestureRecognizers>
-                        <TapGestureRecognizer
-                            Command="{Binding Source={RelativeSource AncestorType={x:Type VM:SettingsViewModel}}, Path=ToDetailPageCommand}"
-                            CommandParameter="profile"
-                            NumberOfTapsRequired="1" />
-                    </Frame.GestureRecognizers>
-                </Frame>
-
-
-                <Frame
-                    Margin="0"
-                    Padding="0"
-                    BackgroundColor="Transparent"
-                    BorderColor="Transparent">
-                    <FlexLayout Margin="20,0,15,10" JustifyContent="SpaceBetween">
-                        <Label
-                            FontSize="19"
-                            HorizontalOptions="Start"
-                            Text="Permissions"
-                            TextColor="{AppThemeBinding Light={StaticResource Black},
-                                                        Dark={StaticResource Gray100}}"
-                            VerticalOptions="Center" />
-
-                        <Image
-                            HeightRequest="40"
-                            HorizontalOptions="EndAndExpand"
-                            WidthRequest="40">
-                            <Image.Source>
-                                <FontImageSource
-                                    FontFamily="AppIcons"
-                                    Glyph="{Static icons:FontIcons.ChevronRight}"
-                                    Size="30"
-                                    Color="{AppThemeBinding Light={StaticResource BasePageTitleLight},
-                                                            Dark={StaticResource Gray300}}" />
-                            </Image.Source>
-                        </Image>
-                    </FlexLayout>
-                    <Frame.GestureRecognizers>
-                        <TapGestureRecognizer
-                            Command="{Binding Source={RelativeSource AncestorType={x:Type VM:SettingsViewModel}}, Path=ToDetailPageCommand}"
-                            CommandParameter="profile"
-                            NumberOfTapsRequired="1" />
-                    </Frame.GestureRecognizers>
-                </Frame>
+                <custom:SettingsItem
+                    ItemCommand="{Binding Source={RelativeSource AncestorType={x:Type VM:SettingsViewModel}}, Path=ToDetailPageCommand}"
+                    ItemCommandParameter="profile"
+                    ItemText="Permissions" />
 
                 <FlexLayout Margin="20,0,15,10" JustifyContent="SpaceBetween">
                     <Label
@@ -105,11 +38,13 @@
 
                     <aloha:ToggleSwitch
                         Margin="0,0,4,0"
-                        Background="{StaticResource PrimaryBrush}"
+                        Background="{AppThemeBinding Light={StaticResource PrimaryBrush},
+                                                     Dark={StaticResource MainPageBrush}}"
                         HeightRequest="30"
                         HorizontalOptions="EndAndExpand"
                         IsOn="True"
-                        ThumbBrush="{StaticResource White}"
+                        ThumbBrush="{AppThemeBinding Light={StaticResource White},
+                                                     Dark={StaticResource DarkBorder}}"
                         WidthRequest="50" />
                 </FlexLayout>
 
@@ -124,86 +59,27 @@
 
                     <aloha:ToggleSwitch
                         Margin="0,0,4,0"
-                        Background="{StaticResource PrimaryBrush}"
+                        Background="{AppThemeBinding Light={StaticResource PrimaryBrush},
+                                                     Dark={StaticResource MainPageBrush}}"
                         HeightRequest="30"
                         HorizontalOptions="EndAndExpand"
                         IsOn="True"
-                        ThumbBrush="{StaticResource White}"
+                        ThumbBrush="{AppThemeBinding Light={StaticResource White},
+                                                     Dark={StaticResource DarkBorder}}"
                         WidthRequest="50" />
 
                 </FlexLayout>
 
-                <Frame
-                    Margin="0"
-                    Padding="0"
-                    BackgroundColor="Transparent"
-                    BorderColor="Transparent">
-                    <FlexLayout Margin="20,0,15,10" JustifyContent="SpaceBetween">
-                        <Label
-                            FontSize="19"
-                            HorizontalOptions="Start"
-                            Text="About"
-                            TextColor="{AppThemeBinding Light={StaticResource Black},
-                                                        Dark={StaticResource Gray100}}"
-                            VerticalOptions="Center" />
 
-                        <Image
-                            HeightRequest="40"
-                            HorizontalOptions="EndAndExpand"
-                            WidthRequest="40">
-                            <Image.Source>
-                                <FontImageSource
-                                    FontFamily="AppIcons"
-                                    Glyph="{Static icons:FontIcons.ChevronRight}"
-                                    Size="30"
-                                    Color="{AppThemeBinding Light={StaticResource BasePageTitleLight},
-                                                            Dark={StaticResource Gray300}}" />
-                            </Image.Source>
-                        </Image>
-                    </FlexLayout>
-                    <Frame.GestureRecognizers>
-                        <TapGestureRecognizer
-                            Command="{Binding Source={RelativeSource AncestorType={x:Type VM:SettingsViewModel}}, Path=ToDetailPageCommand}"
-                            CommandParameter="profile"
-                            NumberOfTapsRequired="1" />
-                    </Frame.GestureRecognizers>
-                </Frame>
+                <custom:SettingsItem
+                    ItemCommand="{Binding Source={RelativeSource AncestorType={x:Type VM:SettingsViewModel}}, Path=ToDetailPageCommand}"
+                    ItemCommandParameter="profile"
+                    ItemText="About" />
 
-                <Frame
-                    Margin="0"
-                    Padding="0"
-                    BackgroundColor="Transparent"
-                    BorderColor="Transparent">
-                    <FlexLayout Margin="20,0,15,10" JustifyContent="SpaceBetween">
-                        <Label
-                            FontSize="19"
-                            HorizontalOptions="Start"
-                            Text="Help"
-                            TextColor="{AppThemeBinding Light={StaticResource Black},
-                                                        Dark={StaticResource Gray100}}"
-                            VerticalOptions="Center" />
-
-                        <Image
-                            HeightRequest="40"
-                            HorizontalOptions="EndAndExpand"
-                            WidthRequest="40">
-                            <Image.Source>
-                                <FontImageSource
-                                    FontFamily="AppIcons"
-                                    Glyph="{Static icons:FontIcons.ChevronRight}"
-                                    Size="30"
-                                    Color="{AppThemeBinding Light={StaticResource BasePageTitleLight},
-                                                            Dark={StaticResource Gray300}}" />
-                            </Image.Source>
-                        </Image>
-                    </FlexLayout>
-                    <Frame.GestureRecognizers>
-                        <TapGestureRecognizer
-                            Command="{Binding Source={RelativeSource AncestorType={x:Type VM:SettingsViewModel}}, Path=ToDetailPageCommand}"
-                            CommandParameter="profile"
-                            NumberOfTapsRequired="1" />
-                    </Frame.GestureRecognizers>
-                </Frame>
+                <custom:SettingsItem
+                    ItemCommand="{Binding Source={RelativeSource AncestorType={x:Type VM:SettingsViewModel}}, Path=ToDetailPageCommand}"
+                    ItemCommandParameter="profile"
+                    ItemText="Help" />
 
                 <FlexLayout Margin="20,0,15,10" JustifyContent="SpaceBetween">
                     <Label

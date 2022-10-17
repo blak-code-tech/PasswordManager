@@ -1,5 +1,6 @@
 using CommunityToolkit.Maui.Behaviors;
 using CommunityToolkit.Maui.Core;
+using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using PasswordManager.AppComposition.Services;
 
@@ -19,6 +20,22 @@ public partial class BasePage : ContentPage
     public static readonly BindableProperty ShowHeadSectionProperty =
             BindableProperty.Create("ShowHeadSection", typeof(bool),
                 typeof(BasePage), true);
+
+    public static readonly BindableProperty ShowProgressProperty =
+            BindableProperty.Create("ShowProgress", typeof(bool), typeof(BasePage), false, BindingMode.TwoWay
+                , propertyChanged: (b,oldValue,newValue) =>
+            {
+                var bp = (BasePage)b;
+                //bp.IsLoading = !bp.IsLoading;
+                bp?.OnPropertyChanged("ShowProgress");
+
+                //do something with bp
+                //o is the old value of the property
+                //n is the new value
+            });
+
+    public static readonly BindableProperty ProgressMessageProperty =
+            BindableProperty.Create("ProgressMessage", typeof(string), typeof(BasePage), "loading...");
 
     public static readonly BindableProperty IsMainPageProperty =
             BindableProperty.Create("IsMainPage", typeof(bool), typeof(BasePage), false);
@@ -57,6 +74,12 @@ public partial class BasePage : ContentPage
         set { SetValue(ShowHeadSectionProperty, value); }
     }
 
+    public bool ShowProgress
+    {
+        get { return (bool)GetValue(ShowProgressProperty); }
+        set { SetValue(ShowProgressProperty, value); }
+    }
+    
     public bool IsMainPage
     {
         get { return (bool)GetValue(IsMainPageProperty); }
@@ -73,6 +96,12 @@ public partial class BasePage : ContentPage
     {
         get { return (string)GetValue(PageTitleProperty); }
         set { SetValue(PageTitleProperty, value); }
+    }
+    
+    public string ProgressMessage
+    {
+        get { return (string)GetValue(ProgressMessageProperty); }
+        set { SetValue(ProgressMessageProperty, value); }
     }
 
     public IRelayCommand MenuReturnCommand

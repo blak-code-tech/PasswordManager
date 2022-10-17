@@ -4,9 +4,11 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:converters="clr-namespace:PasswordManager.AppComposition.Converters"
-    xmlns:local="clr-namespace:PasswordManager">
+    xmlns:local="clr-namespace:PasswordManager"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit">
     <Application.Resources>
         <ResourceDictionary>
+            <converters:InvertedBoolConverter x:Key="InvertedBoolConverter" />
             <converters:PasswordVisibilityConverter x:Key="PasswordVisibility" />
             <converters:MenuIconConverter x:Key="MenuIconConverter" />
             <converters:PasswordStrengthColorConverter x:Key="PasswordStrengthColorConverter" />

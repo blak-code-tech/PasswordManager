@@ -6,6 +6,7 @@ using Firebase.Auth;
 using PasswordManager.AppComposition.Helpers.Statics;
 using PasswordManager.AppComposition.Helpers.Validations.Rules;
 using PasswordManager.AppComposition.Services;
+using PasswordManager.AppComposition.Services.Notification;
 using PasswordManager.AppComposition.Views.Auth;
 
 namespace PasswordManager.AppComposition.ViewModels.Auth
@@ -29,9 +30,16 @@ namespace PasswordManager.AppComposition.ViewModels.Auth
         [ObservableProperty]
         [NotifyCanExecuteChangedFor(nameof(RegisterCommand))]
         string email;
+        
 
         [ObservableProperty]
         bool passwordVisible = true;
+
+        [ObservableProperty]
+        string progressMessage;
+
+        [ObservableProperty]
+        private bool isLoading = false;
 
         private RegistrationMain instance;
         public RegistrationViewModel(RegistrationMain _instance)
@@ -46,19 +54,21 @@ namespace PasswordManager.AppComposition.ViewModels.Auth
             {
                 try
                 {
-                    var userCredentials = await InAppAuthenticationServices.SignUpUserWithEmailAndPassword(Email, Password, Name);
-                    await instance.DisplaySnackbar("Check email");
+                    IsLoading = true;
+                    _ = await InAppAuthenticationServices.SignUpUserWithEmailAndPassword(Email, Password, Name);
+                    IsLoading = false;
                     await Shell.Current.GoToAsync("///login");
                 }
                 catch (FirebaseAuthHttpException ex)
                 {
+                    IsLoading = false;
                     await StaticMethods<RegistrationMain>.HandleFirebaseAuthError(instance, ex.Reason, ex.Message);
                 }
 
             }
             else
             {
-                await instance.DisplaySnackbar("Invalid input");
+                await InAppNotification<RegistrationMain>.ShowSnackBarAsync(instance, "The Email you have entered is invalid.");
             }
 
         }
@@ -66,6 +76,9 @@ namespace PasswordManager.AppComposition.ViewModels.Auth
         [RelayCommand]
         private async Task ToLoginPage()
         {
+            Name = String.Empty;
+            Email = String.Empty;
+            Password = String.Empty;
             await Shell.Current.GoToAsync("///login");
         }
 

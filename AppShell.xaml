@@ -54,10 +54,7 @@
         </Tab>
     </TabBar>
 
-    <ShellContent
-        Title="onboarding"
-        ContentTemplate="{DataTemplate page:Onboarding.OnboardingMain}"
-        Route="onboarding" />
+    <ShellContent ContentTemplate="{DataTemplate page:Onboarding.OnboardingMain}" Route="onboarding" />
 
     <ShellContent ContentTemplate="{DataTemplate page:Auth.LoginMain}" Route="login" />
 

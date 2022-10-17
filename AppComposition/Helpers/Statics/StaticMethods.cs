@@ -1,4 +1,6 @@
 ﻿using Firebase.Auth;
+using MetroLog;
+using PasswordManager.AppComposition.Services;
 using PasswordManager.AppComposition.Services.Notification;
 
 namespace PasswordManager.AppComposition.Helpers.Statics
@@ -104,7 +106,7 @@ namespace PasswordManager.AppComposition.Helpers.Statics
             if (shouldGetUserOut)
             {
                 await page.DisplayAlert("Attention", message, "OK");
-                await PasswordManager.AppComposition.Services.InAppAuthenticationServices.SignOutUser();
+                await InAppAuthenticationServices.SignOutUser();
                 await Shell.Current.GoToAsync("///login");
             }
             else

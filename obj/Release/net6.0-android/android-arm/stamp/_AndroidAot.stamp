@@ -7,6 +7,9 @@ obj\Release\net6.0-android\android-arm\aot\Firebase.dll.so
 obj\Release\net6.0-android\android-arm\aot\LiteDB.dll.so
 obj\Release\net6.0-android\android-arm\aot\MetroLog.Maui.dll.so
 obj\Release\net6.0-android\android-arm\aot\MetroLog.Net6.dll.so
+obj\Release\net6.0-android\android-arm\aot\Microsoft.AppCenter.dll.so
+obj\Release\net6.0-android\android-arm\aot\Microsoft.AppCenter.Analytics.dll.so
+obj\Release\net6.0-android\android-arm\aot\Microsoft.AppCenter.Crashes.dll.so
 obj\Release\net6.0-android\android-arm\aot\Microsoft.Extensions.Configuration.dll.so
 obj\Release\net6.0-android\android-arm\aot\Microsoft.Extensions.Configuration.Abstractions.dll.so
 obj\Release\net6.0-android\android-arm\aot\Microsoft.Extensions.DependencyInjection.dll.so
@@ -70,6 +73,7 @@ obj\Release\net6.0-android\android-arm\aot\System.ComponentModel.TypeConverter.d
 obj\Release\net6.0-android\android-arm\aot\System.ComponentModel.dll.so
 obj\Release\net6.0-android\android-arm\aot\System.Console.dll.so
 obj\Release\net6.0-android\android-arm\aot\System.Data.Common.dll.so
+obj\Release\net6.0-android\android-arm\aot\System.Diagnostics.StackTrace.dll.so
 obj\Release\net6.0-android\android-arm\aot\System.Diagnostics.TraceSource.dll.so
 obj\Release\net6.0-android\android-arm\aot\System.Drawing.Primitives.dll.so
 obj\Release\net6.0-android\android-arm\aot\System.Drawing.dll.so

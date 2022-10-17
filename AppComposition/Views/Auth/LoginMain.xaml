@@ -7,7 +7,9 @@
     xmlns:base="clr-namespace:PasswordManager.AppComposition.Views.MainPages"
     xmlns:custom="clr-namespace:PasswordManager.AppComposition.CustomControls"
     xmlns:icons="clr-namespace:PasswordManager.Resources.Fonts"
-    ShowHeadSection="False">
+    ProgressMessage="{Binding ProgressMessage}"
+    ShowHeadSection="False"
+    ShowProgress="{Binding IsLoading, Mode=TwoWay}">
     <base:BasePage.Body>
         <ScrollView>
             <Grid Padding="15">
