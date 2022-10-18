@@ -6,7 +6,8 @@
     x:Name="this"
     BindingContext="{Reference this}">
     <Border
-        BackgroundColor="Transparent"
+        BackgroundColor="{AppThemeBinding Light=Transparent,
+                                          Dark={StaticResource MainPageDark}}"
         HeightRequest="90"
         StrokeThickness="1"
         WidthRequest="90">

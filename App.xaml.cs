@@ -7,7 +7,7 @@ public partial class App : Application
 	public App()
 	{
         //Register Syncfusion license
-        Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("NzI4MTI3QDMyMzAyZTMzMmUzME1XTG53OG5pcktWcXFCYXJRcTc0VllzM3A0Tk5PV0ZudENPcHZRSXlEVkk9");
+        Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("NzQxNDUxQDMyMzAyZTMzMmUzMG0ydUgzMEJTcVhJRjhWMVVkR25CeXJVRUVHNHFhd3dLZGJJb0NwdTZONE09");
 
         InitializeComponent();
 
@@ -18,10 +18,23 @@ public partial class App : Application
 	{
 		base.OnStart();
 
-		Application.Current.RequestedThemeChanged += Current_RequestedThemeChanged; ;
+		Application.Current.RequestedThemeChanged += Current_RequestedThemeChanged;
     }
 
-	private void Current_RequestedThemeChanged(object sender, AppThemeChangedEventArgs e)
+    protected override void OnSleep()
+    {
+        base.OnSleep();
+        Application.Current.RequestedThemeChanged -= Current_RequestedThemeChanged;
+    }
+
+    protected override void OnResume()
+    {
+        base.OnResume();
+        Application.Current.RequestedThemeChanged += Current_RequestedThemeChanged;
+    }
+
+
+    private void Current_RequestedThemeChanged(object sender, AppThemeChangedEventArgs e)
 	{
         AppTheme currentTheme = e.RequestedTheme;
 
@@ -30,13 +43,13 @@ public partial class App : Application
             if (currentTheme == AppTheme.Unspecified || currentTheme == AppTheme.Light)
             {
 #if __ANDROID__
-                MainActivity.SetLightTheme();
+                MainActivity.SetNavLightTheme();
 #endif
             }
             else
             {
 #if __ANDROID__
-                MainActivity.SetDarkTheme();
+                MainActivity.SetNavDarkTheme();
 #endif
             }
         });

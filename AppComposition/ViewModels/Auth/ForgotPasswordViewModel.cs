@@ -1,16 +1,11 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using PasswordManager.AppComposition.Views.Auth;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PasswordManager.AppComposition.ViewModels.Auth
 {
     [INotifyPropertyChanged]
-    public partial class ForgotPasswordViewModel : BaseViewModel
+    public partial class ForgotPasswordViewModel
     {
         ForgotPassword instance;
 
@@ -26,6 +21,12 @@ namespace PasswordManager.AppComposition.ViewModels.Auth
         public async Task SubmitEmail()
         {
             await instance.DisplayAlert("Dev", "Submitted wmail successfully.", "Ok");
+        }
+
+        [RelayCommand]
+        public async Task Return()
+        {
+            await Shell.Current.GoToAsync("..");
         }
     }
 }

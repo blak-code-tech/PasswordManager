@@ -6,6 +6,7 @@
     xmlns:VM="clr-namespace:PasswordManager.AppComposition.ViewModels.MainPages"
     xmlns:base="clr-namespace:PasswordManager.AppComposition.Views.MainPages"
     xmlns:icons="clr-namespace:PasswordManager.Resources.Fonts"
+    xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
     xmlns:sys="clr-namespace:System;assembly=netstandard"
     AddPasswordCommand="{Binding ToNewPasswordCommand}"
     IsMainPage="True"
@@ -40,7 +41,8 @@
                             FontFamily="BebasNeueRegular"
                             FontSize="20"
                             Text="{Binding Name}"
-                            TextColor="{StaticResource BasePageTitleLight}"
+                            TextColor="{AppThemeBinding Light={StaticResource BasePageTitleLight},
+                                                        Dark={StaticResource MainPage}}"
                             TextTransform="Uppercase" />
                     </DataTemplate>
                 </CollectionView.GroupHeaderTemplate>
@@ -50,7 +52,9 @@
                         <Label
                             Padding="15,0,0,10"
                             FontSize="Small"
-                            Text="{Binding Count, StringFormat='Total animals: {0:D}'}" />
+                            Text="{Binding Count, StringFormat='Total animals: {0:D}'}"
+                            TextColor="{AppThemeBinding Light={StaticResource Gray950},
+                                                        Dark={StaticResource MainPage}}" />
                     </DataTemplate>
                 </CollectionView.GroupFooterTemplate>
 
@@ -67,7 +71,8 @@
                                         FontFamily="AppIcons"
                                         Glyph="{Binding Icon}"
                                         Size="50"
-                                        Color="{StaticResource BasePageTitleLight}" />
+                                        Color="{AppThemeBinding Light={StaticResource BasePageTitleLight},
+                                                                Dark={StaticResource MainPage}}" />
                                 </Image.Source>
                             </Image>
 
@@ -78,13 +83,15 @@
                                             FontFamily="PoppinsRegular"
                                             FontSize="20"
                                             Text="{Binding Title}"
-                                            TextColor="{StaticResource TertiaryDark}" />
+                                            TextColor="{AppThemeBinding Light={StaticResource TertiaryDark},
+                                                                        Dark={StaticResource White}}" />
                                         <Span Text="{x:Static sys:Environment.NewLine}" />
                                         <Span
                                             FontFamily="PoppinsRegular"
                                             FontSize="16"
                                             Text="{Binding EmailOrUsername}"
-                                            TextColor="#8018191F" />
+                                            TextColor="{AppThemeBinding Light=#8018191F,
+                                                                        Dark={StaticResource MainPage}}" />
                                     </FormattedString>
                                 </Label.FormattedText>
                             </Label>
@@ -107,32 +114,35 @@
 
                 <!--  Custom empty view  -->
                 <CollectionView.EmptyView>
-                    <Grid BackgroundColor="Transparent">
-                        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    <ContentView>
+                        <Grid BackgroundColor="Transparent">
+                            <VerticalStackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
 
-                            <Image
-                                Aspect="AspectFit"
-                                IsVisible="False"
-                                Source="favoritebg.png"
-                                WidthRequest="150" />
+                                <skia:SKLottieView
+                                    HeightRequest="300"
+                                    HorizontalOptions="Center"
+                                    RepeatCount="1"
+                                    RepeatMode="Restart"
+                                    Source="empty.json" />
 
-                            <Label
-                                HorizontalOptions="CenterAndExpand"
-                                HorizontalTextAlignment="Center"
-                                TextColor="{AppThemeBinding Light={StaticResource MainPageDark},
-                                                            Dark=Wheat}"
-                                VerticalOptions="Center">
+                                <Label
+                                    Margin="0,-50,0,0"
+                                    HorizontalOptions="CenterAndExpand"
+                                    HorizontalTextAlignment="Center"
+                                    TextColor="{AppThemeBinding Light={StaticResource DarkBorder},
+                                                                Dark={StaticResource MainPage}}"
+                                    VerticalOptions="Center">
 
-                                <Label.FormattedText>
-                                    <FormattedString>
-                                        <Span FontSize="Large" Text="No Passwords" />
-                                    </FormattedString>
-                                </Label.FormattedText>
-                            </Label>
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span FontSize="15" Text="No Passwords" />
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
 
-                        </StackLayout>
-                    </Grid>
-
+                            </VerticalStackLayout>
+                        </Grid>
+                    </ContentView>
                 </CollectionView.EmptyView>
 
                 <CollectionView.Footer>
@@ -141,6 +151,7 @@
                         BorderColor="Transparent"
                         HeightRequest="60" />
                 </CollectionView.Footer>
+
             </CollectionView>
 
         </RefreshView>
